@@ -62,3 +62,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// mutation needed for addProduct! go back 

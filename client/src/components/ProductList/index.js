@@ -29,12 +29,12 @@ function ProductList() {
       });
     } else if (!loading) {
       
-      idbPromise("products", "get").then((products) => {
-        dispatch({
-          type: UPDATE_PRODUCTS,
-          products: products,
-        });
-      });
+      // idbPromise("products", "get").then((products) => {
+      //   dispatch({
+      //     type: UPDATE_PRODUCTS,
+      //     products: products,
+      //   });
+      // });
     }
   }, [data, loading, dispatch]);
 

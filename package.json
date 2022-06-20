@@ -23,5 +23,8 @@
   "homepage": "https://github.com/chris-15/Rent-A-Fit-Project3#readme",
   "devDependencies": {
     "concurrently": "^7.2.2"
+  },
+  "dependencies": {
+    "react-icons": "^4.4.0"
   }
 }

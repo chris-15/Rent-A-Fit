@@ -25,17 +25,18 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
   // Serve up static assets
   // dont need yet?
-  //app.use('/images', express.static(path.join(__dirname, '../client/images')));
+  app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
   // uncomment when client side is ready
-  /* if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-} */
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  }
 
   // uncomment when client side is ready
-  /* app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-}); */
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+  
 
   db.once("open", () => {
     app.listen(PORT, () => {

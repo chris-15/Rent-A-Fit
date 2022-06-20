@@ -113,7 +113,7 @@ function Detail() {
           />
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      {/* {loading ? <img src={} alt="loading" /> : null} */}
       <Cart />
     </>
   );

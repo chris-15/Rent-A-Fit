@@ -5,7 +5,7 @@ import ProductItem from "../ProductItem";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { QUERY_PRODUCTS } from "../../utils/queries";
-import spinner from "../../assets/spinner.gif";
+
 import { idbPromise } from "../../utils/helpers";
 
 function ProductList() {
@@ -67,7 +67,7 @@ function ProductList() {
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      {/* {loading ? <img src={} alt="loading" /> : null} */}
     </div>
   );
 }

@@ -15,6 +15,7 @@ import NoMatch from "./pages/NoMatch";
 import OrderHistory from "./pages/OrderHistory";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
+import Footer from './components/Footer'
 import { StoreProvider } from "./utils/GlobalState";
 
 const httpLink = createHttpLink({
@@ -51,6 +52,7 @@ function App() {
               <Route path="/products/:id" element={<Detail />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
+            <Footer />
           </StoreProvider>
         </div>
       </Router>

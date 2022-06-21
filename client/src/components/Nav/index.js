@@ -46,7 +46,7 @@ function Nav() {
       <h1 className="header-logo">
         <Link to="/">
           <span role="img" aria-label="shopping bag" ></span>
-          Shop-Shop
+          RentAFit
         </Link>
       </h1>
 

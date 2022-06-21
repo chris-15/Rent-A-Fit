@@ -60,7 +60,7 @@ function Login(props) {
 
     
       <form onSubmit={handleFormSubmit} className="signup-form">
-      <Link className='FaChevronLeft' to="/signup"> <FaChevronLeft style={{marginTop: "2%"}}/> Sign Up </Link>
+      
       <h2>Login</h2>
         <div className="flex-row  float-label my-2">
       
@@ -96,6 +96,7 @@ function Login(props) {
         <div className="flex-row my-2 inputs">
           <button type="submit" className='submit-button'>Submit</button>
         </div>
+        <Link to="/signup" className='not-a-user'>Not a User? <span>Sign Up</span> </Link>
       </form>
 
       <div className='login-right'>

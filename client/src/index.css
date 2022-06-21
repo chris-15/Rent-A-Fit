@@ -102,11 +102,11 @@
     font-weight: bold;
   }
   
-  a:hover{
+  /* a:hover{
     color: #826aed;
     transition: .3s;
   }
-  
+   */
   
   header {
     background: var(--primary);
@@ -156,6 +156,17 @@
   .signup-form{
     margin-top: 5%;
   }
+  .not-a-user, .already-a-user{
+   
+    font-weight: 500;
+    color: #272f32;
+  }
+  .not-a-user > span{
+    color:  #826aed;
+  }
+  .already-a-user > span{
+    color:  #826aed;
+  }
   .signup-form > h2{
     margin-top: 5%;
   }
@@ -189,10 +200,12 @@
     border-radius: 0px;
     width:  70%;
     padding: 0.80rem;
-    background-color: black;
-    color: white;
+    background: #000;
+    color: #fff;
+    z-index: 1;
     font-weight: bolder;
   }
+  
   input {
     font-size: 1rem;
     padding: 0.60rem;

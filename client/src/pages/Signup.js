@@ -67,7 +67,7 @@ function handleTextChange(name, value) {
     
       
       <form onSubmit={handleFormSubmit} className="signup-form">
-      <Link className='FaChevronLeft' to="/login"> <FaChevronLeft style={{marginTop: "2%"}}/> Login </Link>
+    
       <h2>Sign Up</h2>
         <div className="flex-row my-2 float-label">
           <input
@@ -121,6 +121,7 @@ function handleTextChange(name, value) {
         <div className="flex-row my-2 inputs">
           <button type="submit" className='submit-button'>submit</button>
         </div>
+        <Link to="/login" className='already-a-user'>Already a User? <span>Login In</span> </Link>
       </form>
       <div className='login-right'>
       <img alt='sign up photo' src={LOGINPHOTO} className='login-right-photo'></img>

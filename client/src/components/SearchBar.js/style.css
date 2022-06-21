@@ -1,0 +1,62 @@
+.searchbar_container{
+    width: 100%;
+    height: 400px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    justify-content: center;
+    background-image: url('../../assets/search.svg');
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.searchbar_container > h1 {
+    margin: 2%;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+.searchForm {
+    width: 300px;
+    height: 44px;
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  
+  }
+.searchInput{
+    all: unset;
+    border: 1px solid lightgray;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    border-radius: 20px;
+    color: rgb(78, 78, 78);
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+  }
+  
+.searchButton, .search-x{
+background-color: transparent;
+font-size: x-large;
+color: rgb(78, 78, 78);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .searchForm{
+        width: 90%;
+    }
+.searchInput{
+
+    width: 100%;
+}
+.searchButton{
+    color: lightgray;
+}
+
+}

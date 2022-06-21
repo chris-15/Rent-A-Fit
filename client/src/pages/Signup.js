@@ -13,8 +13,8 @@ function Signup(props) {
     email: false,
     password: false
   })
-
-  const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -27,7 +27,7 @@ function Signup(props) {
         lastName: formState.lastName,
       },
     });
-     console.log(formState)
+    console.log(formState)
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   };
@@ -116,15 +116,14 @@ function handleTextChange(name, value) {
             value={formState.password}
             onChange={handleChange}
           />
-          <label htmlFor='pwd' className={ isActive.password ? 'Active' : ''}>
-          Password</label>
+         
         </div>
         <div className="flex-row my-2 inputs">
           <button type="submit" className='submit-button'>submit</button>
         </div>
       </form>
       <div className='login-right'>
-      <img src={LOGINPHOTO} className='login-right-photo'></img>
+      <img alt='sign up photo' src={LOGINPHOTO} className='login-right-photo'></img>
       </div>
     </div>
   );

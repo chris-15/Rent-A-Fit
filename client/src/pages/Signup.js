@@ -13,7 +13,7 @@ function Signup(props) {
     email: false,
     password: false
   })
-  const [value, setValue] = useState('')
+
   const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
@@ -27,6 +27,7 @@ function Signup(props) {
         lastName: formState.lastName,
       },
     });
+     console.log(formState)
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   };

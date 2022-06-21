@@ -1,11 +1,19 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { Link } from "react-router-dom";
-import { LOGIN } from "../utils/mutations";
-import Auth from "../utils/auth";
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
+import WELCOMEIMG from '../assets/login.svg'
+import { FaChevronLeft} from 'react-icons/fa'
 
 function Login(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+
+  const [isActive, setIsActive] = useState({
+    email: false,
+    password: false
+  })
+
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (event) => {
@@ -21,49 +29,78 @@ function Login(props) {
     }
   };
 
+  function handleTextChange(name, value) {
+    // setValue(text);
+  
+    if (value !== '') {
+      setIsActive({
+        ...isActive,
+        [name]: true
+      });
+    } else {
+      setIsActive({
+        ...isActive,
+        [name]:false
+      });
+    }
+  }
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
       ...formState,
       [name]: value,
     });
+    handleTextChange(name, value)
   };
 
   return (
-    <div className="">
-      <Link to="/signup">← Go to Signup</Link>
+    <div className="container my-1 signup-container">
+     
 
+    
+      <form onSubmit={handleFormSubmit} className="signup-form">
+      <Link className='FaChevronLeft' to="/signup"> <FaChevronLeft style={{marginTop: "2%"}}/> Sign Up </Link>
       <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="">
-          <label htmlFor="email">Email address:</label>
+        <div className="flex-row  float-label my-2">
+      
           <input
-            placeholder="youremail@test.com"
+  
             name="email"
             type="email"
             id="email"
+            value={formState.email}
             onChange={handleChange}
           />
+          <label htmlFor='email' className={ isActive.email ? 'Active' : ''}>
+          youremail@gmail.com</label>
         </div>
-        <div className="">
-          <label htmlFor="pwd">Password:</label>
+        <div className="flex-row my-2 float-label">
+         
           <input
-            placeholder="******"
+    
             name="password"
             type="password"
             id="pwd"
+            value={formState.password}
             onChange={handleChange}
           />
+          <label htmlFor='pwd' className={ isActive.password ? 'Active' : ''}>
+          Password</label>
         </div>
         {error ? (
           <div>
-            <p className="">The provided credentials are incorrect</p>
+            <p className="error-text">The provided credentials are incorrect</p>
           </div>
         ) : null}
-        <div className="">
-          <button type="submit">Submit</button>
+        <div className="flex-row my-2 inputs">
+          <button type="submit" className='submit-button'>Submit</button>
         </div>
       </form>
+
+      <div className='login-right'>
+      <img  alt='login' src={WELCOMEIMG} className='login-right-photo'></img>
+      </div>
     </div>
   );
 }

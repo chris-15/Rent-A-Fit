@@ -3,6 +3,7 @@ const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 require("dotenv").config()
 const cloudinary = require("cloudinary");
+
 const resolvers = {
     Query: {
       categories: async () => {
@@ -102,7 +103,6 @@ const resolvers = {
         return { token, user };
       },
       uploadPhoto: async (_, { photo }) => {
-        
         //initialize cloudinary
               cloudinary.config({
                 cloud_name: process.env.CLOUDINARY_NAME,

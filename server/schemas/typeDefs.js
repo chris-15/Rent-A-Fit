@@ -58,6 +58,8 @@ const typeDefs = gql`
     updateProduct(_id: ID!, quantity: Int!): Product
     addReview(productId: ID!, reviewBody: String!): Product
     login(email: String!, password: String!): Auth
+    #our mutation type for image upload which accepts the image location as a string whether local or remote.It returns a string.
+    uploadPhoto(photo: String): String
   }
 `;
 

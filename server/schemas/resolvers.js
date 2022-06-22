@@ -102,6 +102,37 @@ const resolvers = {
   
         return { token, user };
       },
+      addReview: async (parent, {productId, reviewBody}, context) => {
+        if(context.user){
+          const updatedProduct = await Product.findOneAndUpdate(
+            {_id: productId},
+            {$push: { reviews: { reviewBody, username: context.user.username}}},
+            {$new: true, runValidators: true}
+          );
+          return updatedProduct
+        }
+      },
+      addProduct: async (parent, args, context) => {
+        if(context.user){
+          const product = await Product.create({...args, username: context.user.username});
+
+          await User.findByIdAndUpdate(
+            {
+              _id: context.user._id
+            },
+            {
+              $push: { products: product._id},
+            },
+            {
+              new: true
+            }
+          );
+
+          return product;
+        }
+        throw new Authentication('You need to be logged in to post a product')
+      },
+
       uploadPhoto: async (_, { photo }) => {
         //initialize cloudinary
               cloudinary.config({

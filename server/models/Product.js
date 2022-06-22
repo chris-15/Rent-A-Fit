@@ -10,6 +10,10 @@ const productSchema = new Schema({
     required: true,
     trim: true,
   },
+  username: {
+   type: String,
+   required: true
+  },
   description: {
     type: String,
   },
@@ -32,7 +36,16 @@ const productSchema = new Schema({
     required: true,
   },
   reviews: [reviewSchema],
+},
+{
+  toJSON: {
+    getters: true
+  }
 });
+
+productSchema.virtual('reviewCount').get(function(){
+  return this.review.length;
+})
 
 const Product = mongoose.model("Product", productSchema);
 

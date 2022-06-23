@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-
-const { Schema } = mongoose;
+const { Schema, model }= require("mongoose");
 const reviewSchema = require('./Review');
 
 
@@ -10,8 +8,13 @@ const productSchema = new Schema({
     required: true,
     trim: true,
   },
+  username: {
+   type: String,
+   required: true
+  },
   description: {
     type: String,
+    required: true
   },
   image: {
     type: String,
@@ -29,11 +32,20 @@ const productSchema = new Schema({
   category: {
     type: Schema.Types.ObjectId,
     ref: "Category",
-    required: true,
+    required: false,
   },
   reviews: [reviewSchema],
+},
+{
+  toJSON: {
+    getters: true
+  }
 });
 
-const Product = mongoose.model("Product", productSchema);
+productSchema.virtual('reviewCount').get(function(){
+  return this.review.length;
+})
+
+const Product = model("Product", productSchema);
 
 module.exports = Product;

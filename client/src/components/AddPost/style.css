@@ -1,0 +1,119 @@
+
+.post_container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+
+
+}
+
+.add-post-title{
+    text-align: center;
+}
+
+.form-container-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 50%;
+}
+.form-container{
+
+    width: 100%;
+    margin: 2%;
+}
+.form-container > h3, h1{
+    font-family: 'Nunito Sans', sans-serif;
+}
+#title-input {
+    width: 75%;
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+    height: 50px;
+}
+.price-input-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 2%;
+    height: 50px;
+}
+#price-input{
+    width: 16%;
+    margin-left: 5%;
+    font-size: 1.5rem;
+}
+.per-day{
+    margin-left: 2%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.form-input{
+    width: 50%;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-align: left;
+    padding-left: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+
+}
+#add-photo{
+    text-align: center;
+    margin: 2%;
+
+}
+#add-photo > h4{
+    border: 1px solid rgb(206, 204, 204);
+    padding-top: 2px;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    background-color: white;
+    font-size: larger;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+}
+#add-photo > h4:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: .3s ease-in-out;
+}
+textarea{
+
+    font-size: 1.0rem ;
+}
+.description_div{
+    width: 100%;
+}
+#description-input{
+    height: 150px;
+    width: 100%;
+}
+.add-post-btn{
+    width: 100%;
+    margin-top: 2%;
+    border-radius: 0px;
+    padding: 0.80rem;
+    background: #000;
+    color: #fff;
+    z-index: 1;
+    font-weight: bolder;
+}
+@media screen and (max-width: 768px) {
+   .post_container{
+    width: 100%;
+   }
+   .form-container-parent{
+    width: 100%;
+   }
+   #description-input, .add-post-btn{
+    width: 100%;
+   }
+}

@@ -11,6 +11,7 @@ import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
+import AddPost from './components/AddPost'
 import OrderHistory from "./pages/OrderHistory";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
@@ -18,7 +19,7 @@ import Footer from './components/Footer'
 import { StoreProvider } from "./utils/GlobalState";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "http://localhost:3001/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -42,8 +43,10 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
+  
             <Nav />
             <Routes>
+              <Route path='/addpost' element={<AddPost />} />
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />

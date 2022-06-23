@@ -18,6 +18,7 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
+      username: "Eholt",
       name: 'Tin of Cookies',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
@@ -27,6 +28,7 @@ db.once('open', async () => {
       quantity: 500
     },
     {
+      username: "Eholt",
       name: 'Canned Coffee',
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
@@ -36,6 +38,7 @@ db.once('open', async () => {
       quantity: 500
     },
     {
+      username: "Eholt",
       name: 'Toilet Paper',
       category: categories[1]._id,
       description:
@@ -45,6 +48,7 @@ db.once('open', async () => {
       quantity: 20
     },
     {
+      username: "Eholt",
       name: 'Handmade Soap',
       category: categories[1]._id,
       description:
@@ -54,6 +58,7 @@ db.once('open', async () => {
       quantity: 50
     },
     {
+      username: "Eholt",
       name: 'Set of Wooden Spoons',
       category: categories[1]._id,
       description:
@@ -63,6 +68,7 @@ db.once('open', async () => {
       quantity: 100
     },
     {
+      username: "Eholt",
       name: 'Camera',
       category: categories[2]._id,
       description:
@@ -72,6 +78,7 @@ db.once('open', async () => {
       quantity: 30
     },
     {
+      username: "Eholt",
       name: 'Tablet',
       category: categories[2]._id,
       description:
@@ -81,6 +88,7 @@ db.once('open', async () => {
       quantity: 30
     },
     {
+      username: "Eholt",
       name: 'Tales at Bedtime',
       category: categories[3]._id,
       description:
@@ -90,6 +98,7 @@ db.once('open', async () => {
       quantity: 100
     },
     {
+      username: "Eholt",
       name: 'Spinning Top',
       category: categories[4]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
@@ -98,6 +107,7 @@ db.once('open', async () => {
       quantity: 1000
     },
     {
+      username: "Eholt",
       name: 'Set of Plastic Horses',
       category: categories[4]._id,
       description:
@@ -107,6 +117,7 @@ db.once('open', async () => {
       quantity: 1000
     },
     {
+      username: "Eholt",
       name: 'Teddy Bear',
       category: categories[4]._id,
       description:
@@ -116,6 +127,7 @@ db.once('open', async () => {
       quantity: 100
     },
     {
+      username: "Eholt",
       name: 'Alphabet Blocks',
       category: categories[4]._id,
       description:
@@ -131,8 +143,7 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
+    username: "pamela",
     email: 'pamela@testmail.com',
     password: 'password12345',
     orders: [
@@ -143,8 +154,7 @@ db.once('open', async () => {
   });
 
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
+    username: "Eholt",
     email: 'eholt@testmail.com',
     password: 'password12345'
   });

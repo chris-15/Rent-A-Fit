@@ -8,8 +8,7 @@ import { FaChevronLeft } from 'react-icons/fa'
 
 function Signup(props) {
   const [isActive, setIsActive] = useState({
-    firstName: false,
-    lastName: false,
+    username: false,
     email: false,
     password: false
   })
@@ -23,8 +22,7 @@ function Signup(props) {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
+        username: formState.username
       },
     });
     console.log(formState)
@@ -69,30 +67,19 @@ function handleTextChange(name, value) {
       <form onSubmit={handleFormSubmit} className="signup-form">
     
       <h2>Sign Up</h2>
-        <div className="flex-row my-2 float-label">
-          <input
-            // placeholder="First Name"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            value={formState.firstName}
-            onChange={handleChange}
-          />
-          <label htmlFor='firstname' className={ isActive.firstName ? 'Active' : ''}>
-          First Name</label>
-        </div>
+       
 
         <div className="flex-row my-2  float-label">
-          <label htmlFor="lastName"></label>
+          <label htmlFor="username"></label>
           <input
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            value={formState.lastName}
+            name="username"
+            type="username"
+            id="username"
+            value={formState.username}
             onChange={handleChange}
           />
-          <label htmlFor='lastName' className={ isActive.lastName ? 'Active' : ''}>
-          Last Name</label>
+          <label htmlFor='username' className={ isActive.username ? 'Active' : ''}>
+          username</label>
         </div>
         <div className="flex-row my-2 float-label">
           

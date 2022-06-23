@@ -43,10 +43,11 @@ search: false})
       return (
         <div className="flex-row  mx-3 nav-items">
           <div className="mx-1">
-            <Link to="/orderHistory">
-              Order History
+            <Link to="/addpost">
+              Add Post
             </Link>
           </div>
+          <FaGripLinesVertical style={{marginTop: '5%'}} />
           <div className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
@@ -87,7 +88,7 @@ search: false})
        </div>
 
       <div className="mx-1 icons">
-        <Link to="/" onClick={() => handleClick('post')} name='post' className={ active.post ? 'active' : 'not-active'}>
+        <Link to="/addpost" onClick={() => handleClick('post')} name='post' className={ active.post ? 'active' : 'not-active'}>
         <MdAddCircle />
           <p>Post</p>
         </Link>
@@ -145,6 +146,7 @@ search: false})
 
       <nav>
         {showNavigation()}
+       
       </nav>
 
       <div className="bottom-nav-div">

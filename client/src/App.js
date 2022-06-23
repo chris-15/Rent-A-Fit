@@ -43,9 +43,10 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
-          <AddPost />
+  
             <Nav />
             <Routes>
+              <Route path='/addpost' element={<AddPost />} />
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />

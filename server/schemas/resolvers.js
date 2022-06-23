@@ -6,13 +6,32 @@ const cloudinary = require("cloudinary");
 
 const resolvers = {
     Query: {
+      me: async (parent, args, context) => {
+        if(context.user){
+          const userData = await User.findOne({_id: context.user._id})
+          .select('-__v -password')
+          .populate('products')
+
+          return userData
+        }
+        throw new AuthenticationError('Not Logged In to see your data')
+      },
+      users: async () => {
+        return User.find()
+        .select('-__v -password')
+        .populate('products')
+      },
+      oneUser: async (parent, {username}) => {
+        return User.findOne({username})
+        .select('-__v -password')
+        .populate('products')
+      },
       categories: async () => {
         return await Category.find();
       },
       products: async (parent, { category, name }) => {
-        const params = {};
-  
-        if (category) {
+        const params = username ? { username} : {};
+          if (category) {
           params.category = category;
         }
   
@@ -21,17 +40,29 @@ const resolvers = {
             $regex: name
           };
         }
+        return  await Product.find(params).sort({ createdAt: -1}).populate('category')
   
-        return await Product.find(params).populate('category');
+        // if (category) {
+        //   params.category = category;
+        // }
+  
+        // if (name) {
+        //   params.name = {
+        //     $regex: name
+        //   };
+        // }
+  
+        // return await Product.find(params).populate('category');
       },
       product: async (parent, { _id }) => {
-        return await Product.findById(_id).populate('category');
+        return await Product.findOne({_id}).populate('category');
       },
       user: async (parent, args, context) => {
         if (context.user) {
           const user = await User.findById(context.user._id).populate({
             path: 'orders.products',
-            populate: 'category'
+            populate: 'category',
+            populate: 'products'
           });
   
           user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);

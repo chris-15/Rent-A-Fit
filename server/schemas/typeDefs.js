@@ -51,7 +51,6 @@ const typeDefs = gql`
     user(username: String!): User
     users: [User]
     me: User
-    oneUser(username: String!): User
     order(_id: ID!): Order
   }
 

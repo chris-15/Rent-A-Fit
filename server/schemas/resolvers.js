@@ -21,25 +21,11 @@ const resolvers = {
         .select('-__v -password')
         .populate('products')
       },
-      oneUser: async (parent, {username}) => {
-        return User.findOne({username})
-        .select('-__v -password')
-        .populate('products')
-      },
       categories: async () => {
         return await Category.find();
       },
-      products: async (parent, { category, name }) => {
+      products: async (parent, { username }) => {
         const params = username ? { username} : {};
-          if (category) {
-          params.category = category;
-        }
-  
-        if (name) {
-          params.name = {
-            $regex: name
-          };
-        }
         return  await Product.find(params).sort({ createdAt: -1}).populate('category')
   
         // if (category) {
@@ -57,20 +43,12 @@ const resolvers = {
       product: async (parent, { _id }) => {
         return await Product.findOne({_id}).populate('category');
       },
-      user: async (parent, args, context) => {
-        if (context.user) {
-          const user = await User.findById(context.user._id).populate({
-            path: 'orders.products',
-            populate: 'category',
-            populate: 'products'
-          });
-  
-          user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-  
-          return user;
-        }
-  
-        throw new AuthenticationError('Not logged in');
+      user: async (parent, { username }) => {
+        return User.findOne({ username })
+          .select('-__v -password')
+          .populate('products')
+          .populate('orders')
+          // .populate('categories');
       },
       order: async (parent, { _id }, context) => {
         if (context.user) {
@@ -90,6 +68,7 @@ const resolvers = {
         const user = await User.create(args);
         const token = signToken(user);
   
+        
         return { token, user };
       },
       addOrder: async (parent, { products }, context) => {
@@ -134,18 +113,23 @@ const resolvers = {
         return { token, user };
       },
       addReview: async (parent, {productId, reviewBody}, context) => {
+        console.log(context.user)
         if(context.user){
           const updatedProduct = await Product.findOneAndUpdate(
             {_id: productId},
-            {$push: { reviews: { reviewBody, username: context.user.username}}},
+            {$push: { reviews: { reviewBody: reviewBody, username: context.user.username}}},
             {$new: true, runValidators: true}
           );
           return updatedProduct
         }
       },
       addProduct: async (parent, args, context) => {
+        console.log("CONTEXT " + context, context.user.username)
+        console.log(context.user)
         if(context.user){
+
           const product = await Product.create({...args, username: context.user.username});
+         
 
           await User.findByIdAndUpdate(
             {

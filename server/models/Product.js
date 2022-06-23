@@ -1,6 +1,4 @@
 const { Schema, model }= require("mongoose");
-
-
 const reviewSchema = require('./Review');
 
 

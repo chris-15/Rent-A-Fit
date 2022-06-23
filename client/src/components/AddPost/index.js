@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BiUpload} from "react-icons/bi";
 import "./style.css";
 
 const AddPost = () => {
@@ -61,18 +62,23 @@ const AddPost = () => {
             type="number"
             min="1"
             max="1000"
+       
           ></input> 
           <p className="per-day"> /day</p>
 
         
         </div>
 
-        <span>
+        <label id="add-photo">
           <input
             type="file"
             //  value={formData.image}
-          ></input>
-        </span>
+            accept="image/*"
+            name="image"
+            style={{display: 'none'}}
+         />
+        <h4>  <BiUpload /> Add Photo </h4>
+        </label>
 
         <h3>Description</h3>
         <textarea
@@ -81,7 +87,7 @@ const AddPost = () => {
           className="form-input"
         ></textarea>
         <button type="submit" className="add-post-btn">
-        Add Post
+       Add Post
         </button>
       </form>
      

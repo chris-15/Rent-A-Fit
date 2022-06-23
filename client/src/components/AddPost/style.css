@@ -5,6 +5,8 @@
     align-items: center;
     align-content: center;
     width: 100%;
+
+
 }
 
 .add-post-title{
@@ -22,6 +24,9 @@
 
     width: 100%;
     margin: 2%;
+}
+.form-container > h3, h1{
+    font-family: 'Nunito Sans', sans-serif;
 }
 #title-input {
     width: 75%;
@@ -45,6 +50,7 @@
     margin-left: 2%;
     font-size: 1.5rem;
     font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .form-input{
@@ -56,11 +62,29 @@
     white-space: nowrap;
     overflow-x: hidden;
     text-align: left;
-    font-family: 'Roboto', sans-serif;
     padding-left: 5px;
+    font-family: 'Nunito Sans', sans-serif;
 
 }
+#add-photo{
+    text-align: center;
+    margin: 2%;
 
+}
+#add-photo > h4{
+    border: 1px solid rgb(206, 204, 204);
+    padding-top: 2px;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    background-color: white;
+    font-size: larger;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+}
+#add-photo > h4:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: .3s ease-in-out;
+}
 textarea{
 
     font-size: 1.0rem ;

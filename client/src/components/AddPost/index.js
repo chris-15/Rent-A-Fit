@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiUpload} from "react-icons/bi";
+import { BiUpload } from "react-icons/bi";
 import "./style.css";
 
 const AddPost = () => {
@@ -37,61 +37,56 @@ const AddPost = () => {
   };
   return (
     <div className="post_container">
-    <div className="form-container-parent">
+      <div className="form-container-parent">
+        <form onSubmit={handleFormSubmit} className="form-container">
+          <span className="add-post-title">
+            <h1>Post a Product</h1>
+          </span>
 
-      <form onSubmit={handleFormSubmit} className="form-container">
+          <h3>Title</h3>
+          <div className="price-input-container">
+            <textarea
+              id="title-input"
+              // value={formData.name}
+              className="form-input"
+            ></textarea>
 
-      <span className="add-post-title">
-      <h1>Post a Product</h1>
-      </span>
-     
+            <input
+              id="price-input"
+              // value={formData.price}
+              className="form-input "
+              type="number"
+              min="1"
+              max="1000"
+            ></input>
+            <p className="per-day"> /day</p>
+          </div>
 
-      
-        <h3>Title</h3>
-        <div className="price-input-container">
-        <textarea
-        id="title-input"
-        // value={formData.name}
-        className="form-input"
-      ></textarea>
-          
-          <input
-            id="price-input"
-            // value={formData.price}
-            className="form-input "
-            type="number"
-            min="1"
-            max="1000"
-       
-          ></input> 
-          <p className="per-day"> /day</p>
+          <label id="add-photo">
+            <input
+              type="file"
+              //  value={formData.image}
+              accept="image/*"
+              name="image"
+              style={{ display: "none" }}
+            />
+            <h4>
+              {" "}
+              <BiUpload /> Add Photo{" "}
+            </h4>
+          </label>
 
-        
-        </div>
-
-        <label id="add-photo">
-          <input
-            type="file"
-            //  value={formData.image}
-            accept="image/*"
-            name="image"
-            style={{display: 'none'}}
-         />
-        <h4>  <BiUpload /> Add Photo </h4>
-        </label>
-
-        <h3>Description</h3>
-        <textarea
-          id="description-input"
-          //  value={formData.description}
-          className="form-input"
-        ></textarea>
-        <button type="submit" className="add-post-btn">
-       Add Post
-        </button>
-      </form>
-     
-    </div>
+          <h3>Description</h3>
+          <textarea
+            id="description-input"
+            //  value={formData.description}
+            className="form-input"
+          ></textarea>
+          <button type="submit" className="add-post-btn">
+            Add Post
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

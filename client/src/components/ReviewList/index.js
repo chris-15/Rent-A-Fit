@@ -11,13 +11,13 @@ const ReviewList = ({ reviews }) => {
    <div className=''>
    <span className='reviews-header'>Reviews</span>
    </div>
-   <div className='review-container'>
+   <div className='review-container-parent'>
    {reviews && reviews.map((review) => {
     return(
       <div className='review-container'>
       <Link to={`/profile/${review.username}`} style={{fontWeight: 700}}
       className='review-username'>
-      {review.username} on { review.createdAt}
+      {review.username} <span>on { review.createdAt}</span>
       </Link>
        <p className='pill mb-3 single-review' key={review._id}>
        {review.reviewBody}</p>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext} from '../../utils/GlobalState.js'
 import { ADD_TO_CART, UPDATE_CART_QUANTITY} from '../../utils/actions'
+import './style.css'
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext()
@@ -44,19 +45,22 @@ const { cart } = state
   } = item;
 
   return (
-    <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
+    <div className="card px-1 py-1 ">
+    
+      <Link to={`/products/${_id}`} >
         <img className="product-img"
           alt={name}
           src={image}
         />
-        <p>{name}</p>
+        <div className="product-stats">
+        <h4>{name}</h4>
+        <span className="product-price">$ {price} / day</span>
+        </div>
       </Link>
-      <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+      <div className="" >
+        <div>Available </div>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button className='add-to-cart' onClick={addToCart}>Add to cart</button>
     </div>
   );
 }

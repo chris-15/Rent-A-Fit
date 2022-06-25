@@ -262,6 +262,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  .justify-center{
+    justify-content: center;
+  }
   
   .space-between {
     justify-content: space-between;
@@ -310,12 +314,7 @@
     padding-top: var(--spacing-two);
     padding-bottom: var(--spacing-two);
   }
-  
-  .card {
-    width: 25%;
-    text-align: center;
-  
-  }
+
   .product-img{
     border-radius: 10px;
    width: 100%;
@@ -358,5 +357,7 @@
     
     .card {
       width: 100%;
+      margin-top: 20%;
+      height: 300px;
     }
   }

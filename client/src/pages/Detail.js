@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
+import ReviewForm from '../components/ReviewForm'
+import ReviewList from '../components/ReviewList'
+import Auth from '../utils/auth'
 import { useStoreContext } from "../utils/GlobalState";
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_PRODUCTS,
+
 } from "../utils/actions";
-import { QUERY_PRODUCTS } from "../utils/queries";
+import { QUERY_PRODUCTS, QUERY_PRODUCTS_WITH_REVIEWS } from "../utils/queries";
 import Cart from "../components/Cart";
 import { idbPromise } from "../utils/helpers";
 
@@ -20,7 +23,7 @@ function Detail() {
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS);
 
   const { products, cart } = state;
 
@@ -61,16 +64,17 @@ function Detail() {
 
   useEffect(() => {
     // already in global store
-    if (products.length) {
-      setCurrentProduct(products.find(product => product._id === id));
-    } 
-    // retrieved from server
-    else if (data) {
+    if(data){
+      console.log(data.products)
+    }
+  
+    console.log(currentProduct)
+    if (data) {
+      setCurrentProduct(data.products.find(product => product._id === id));
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
       });
-  
       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
       });
@@ -84,11 +88,14 @@ function Detail() {
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+  }, [products, data, loading, dispatch, id, currentProduct]);
 
+  if(loading){
+    return <h1>Loading</h1>
+  }
   return (
     <>
-      {currentProduct ? (
+      {currentProduct !== {} ? (
         <div className="">
           <Link to="/">← Back to Products</Link>
 
@@ -111,6 +118,13 @@ function Detail() {
             src={`${currentProduct.image}`}
             alt={currentProduct.name}
           />
+
+          {console.log(currentProduct)} 
+
+       { } <ReviewList reviews={currentProduct.reviews } /> 
+          
+          {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
+
         </div>
       ) : null}
       {/* {loading ? <img src={} alt="loading" /> : null} */}

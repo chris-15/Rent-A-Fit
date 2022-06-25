@@ -16,6 +16,30 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+
+export const QUERY_PRODUCTS_WITH_REVIEWS = gql `
+query Products {
+  products {
+    _id
+    name
+    username
+    description
+    image
+    quantity
+    price
+    category {
+      _id
+      name
+    }
+    reviews {
+      reviewBody
+      _id
+      createdAt
+      username
+    }
+  }
+}
+`
 export const QUERY_ALL_PRODUCTS = gql`
   {
     products {

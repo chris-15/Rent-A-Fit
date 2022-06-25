@@ -48,7 +48,7 @@ const { cart } = state
       <Link to={`/products/${_id}`}>
         <img className="product-img"
           alt={name}
-          src={`/images/${image}`}
+          src={image}
         />
         <p>{name}</p>
       </Link>

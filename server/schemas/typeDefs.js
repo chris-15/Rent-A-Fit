@@ -63,7 +63,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     #our mutation type for image upload which accepts the image location as a string whether local or remote.It returns a string.
     uploadPhoto(photo: String): String
-    addProduct(description: String!, image: String, price: Float!, name: String!): Product
+    addProduct(description: String!, image: String!, price: Float!, name: String!): Product
   }
 `;
 

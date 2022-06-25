@@ -96,11 +96,20 @@ function Detail() {
   return (
     <>
       {currentProduct !== {} ? (
-        <div className="">
+        <div className="details-body-container">
+      
+        <div className="details-body">
           <Link to="/">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
-
+          <div>
+          <img
+          className="details-body-img-contaier"
+          src={`${currentProduct.image}`}
+          alt={currentProduct.name}
+        />
+          </div>
+          
           <p>{currentProduct.description}</p>
 
           <p>
@@ -114,10 +123,7 @@ function Detail() {
             </button>
           </p>
 
-          <img
-            src={`${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+          
 
           {console.log(currentProduct)} 
 
@@ -125,6 +131,7 @@ function Detail() {
           
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 
+        </div>
         </div>
       ) : null}
       {/* {loading ? <img src={} alt="loading" /> : null} */}

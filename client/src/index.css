@@ -251,6 +251,29 @@
   .float-label:focus-within label {
     transform: translate(0, 12px) scale(0.75);
   }
+
+
+.details-body-container{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+  /* details styling */
+  .details-body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+ 
+    align-items: center;
+  }
+  .details-body-img-contaier{
+    width: 100%;
+    height: 500px;
+  }
+  .details-body-img-contaier img{
+    width: 100%;
+    height: 100%;
+  }
   .container {
     width: 100%;
     max-width: 1200px;

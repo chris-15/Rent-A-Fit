@@ -30,13 +30,12 @@ export const ADD_ORDER = gql`
 `;
 
 export const ADD_PRODUCT = gql`
-mutation AddProduct($description: String!, $price: Float!, $name: String!) {
-  addProduct(description: $description, price: $price, name: $name) {
+mutation AddProduct($description: String!, $image: String!, $price: Float!, $name: String!) {
+  addProduct(description: $description, image: $image, price: $price, name: $name) {
     name
-    username
-    price
-    description
     image
+    description
+    username
   }
 }`
 

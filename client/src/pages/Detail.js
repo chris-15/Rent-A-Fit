@@ -110,7 +110,7 @@ function Detail() {
         />
           </div>
           
-          <p>{currentProduct.description}</p>
+          <p className="details-description">{currentProduct.description}</p>
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
@@ -127,7 +127,7 @@ function Detail() {
 
           {console.log(currentProduct)} 
 
-       { } <ReviewList reviews={currentProduct.reviews } /> 
+       { currentProduct ? <ReviewList reviews={currentProduct.reviews } /> : <p>No Reviews yet... Leave a review</p>}  
           
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 

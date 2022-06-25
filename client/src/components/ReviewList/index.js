@@ -7,22 +7,21 @@ const ReviewList = ({ reviews }) => {
   console.log(reviews)
   return (
 
-   <div className='card mb-3'>
-   <div className='card-header'>
-   <span className='text-light'>Reviews</span>
+   <div className=' mb-3'>
+   <div className=''>
+   <span className='reviews-header'>Reviews</span>
    </div>
-   <div className='card-body'>
+   <div className='review-container'>
    {reviews && reviews.map((review) => {
     return(
-       <p className='pill mb-3' key={review._id}>
-       {review.reviewBody}
-       
-       {/*
-       <Link to={`/profile/${review.username}`} style={{fontWeight: 700}}>
-       {review.username} on { review.createdAt}
-       </Link>
-       */}
-       </p>
+      <div className='review-container'>
+      <Link to={`/profile/${review.username}`} style={{fontWeight: 700}}
+      className='review-username'>
+      {review.username} on { review.createdAt}
+      </Link>
+       <p className='pill mb-3 single-review' key={review._id}>
+       {review.reviewBody}</p>
+       </div>
    )})}
    </div>
    </div>

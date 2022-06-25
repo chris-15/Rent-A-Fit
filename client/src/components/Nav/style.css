@@ -6,7 +6,7 @@
     background-color: antiquewhite;
     display: none;
    background-color: white;
-   border-top: 1px solid rgb(210, 209, 209);
+   border-top: .5px solid rgb(210, 209, 209);
 
 }
 /* body{
@@ -22,7 +22,7 @@
 .icon-container{
     display: flex;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .icons{

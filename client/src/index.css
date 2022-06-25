@@ -353,6 +353,14 @@
       width: 100%;
       
     }
+    .details-description p {
+      font-size: 2.00rem;
+    }
+    .details-body {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+  }
     .signup-container{
       display: flex;
       flex-direction: column-reverse;

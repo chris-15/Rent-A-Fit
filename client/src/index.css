@@ -256,15 +256,17 @@
 .details-body-container{
   display: flex;
   justify-content: center;
-  width: 60%;
+  /* justify-items: center;
+  align-content: center; */
+  /* width: 60%; */
 }
   /* details styling */
   .details-body{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
  
-    align-items: center;
+
   }
   .details-body-img-contaier{
     width: 100%;
@@ -347,6 +349,10 @@
   }
   
   @media screen and (max-width: 768px) {
+    .details-body-container{
+      width: 100%;
+      
+    }
     .signup-container{
       display: flex;
       flex-direction: column-reverse;

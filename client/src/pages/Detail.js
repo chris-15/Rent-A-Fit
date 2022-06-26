@@ -102,7 +102,7 @@ function Detail() {
           <Link to="/">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
-          <div>
+          <div className="details-body-img-parent">
           <img
           className="details-body-img-contaier"
           src={`${currentProduct.image}`}
@@ -112,15 +112,22 @@ function Detail() {
           
           <p className="details-description">{currentProduct.description}</p>
 
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
-            <button onClick={addToCart}>Add to Cart</button>
+          <p className="details-price-container">
+              <div className="details-price">
+              ${currentProduct.price}{" "} / Day
+              
+              </div>
+            <div>
+            <button onClick={addToCart}
+            className='add-to-cart-btn'>Rent</button>
             <button
+            className='delete-from-cart-btn'
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
+            </div>
           </p>
 
           

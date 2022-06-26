@@ -256,6 +256,7 @@
 .details-body-container{
   display: flex;
   justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
   /* justify-items: center;
   align-content: center; */
   /* width: 60%; */
@@ -264,17 +265,46 @@
   .details-body{
     display: flex;
     flex-direction: column;
-    width: 60%;
- 
-
+    width: 55%;
+  }
+  .details-body h2{
+    font-size: 2.00rem;
+    font-family: 'Nunito Sans', sans-serif;
   }
   .details-body-img-contaier{
     width: 100%;
-    height: 500px;
+    
+    height: 510px;
   }
   .details-body-img-contaier img{
     width: 100%;
     height: 100%;
+    border-radius: 5%;
+  }
+  .details-body-img-parent{
+    display: flex;
+    justify-content: center;
+  }
+  .details-description{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.20rem;
+  }
+  .details-price-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .details-price{
+    font-weight: 600;
+    font-size: 1.50rem;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+ 
+  .add-to-cart-btn, .delete-from-cart-btn{
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    border-radius: 10px;
+    padding: 7px 20px 7px 20px;
+    background-color: rgb(128, 79, 234);
   }
   .container {
     width: 100%;

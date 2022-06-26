@@ -34,3 +34,12 @@ height: 100%;
     /* border: solid blue 1px; */
     margin-right: 2%;
   }
+
+
+@media screen and (max-width: 768px) {
+    .card{
+        width: 100%;
+        margin-top: 25%;
+    }
+
+}

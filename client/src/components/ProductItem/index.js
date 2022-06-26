@@ -41,12 +41,12 @@ const { cart } = state
     name,
     _id,
     price,
-    quantity
+username
   } = item;
 
   return (
     <div className="card px-1 py-1 ">
-    
+    <Link to={`/profile/${username}`}>{username}</Link>
       <Link to={`/products/${_id}`} >
         <img className="product-img"
           alt={name}

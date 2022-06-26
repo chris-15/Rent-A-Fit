@@ -7,10 +7,13 @@ const cloudinary = require("cloudinary");
 const resolvers = {
     Query: {
       me: async (parent, args, context) => {
+        console.log(context)
         if(context.user){
+          
           const userData = await User.findOne({_id: context.user._id})
           .select('-__v -password')
           .populate('products')
+          .populate('orders')
 
           return userData
         }

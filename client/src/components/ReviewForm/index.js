@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { useMutation } from '@apollo/client'
 import { ADD_REVIEW } from '../../utils/mutations'
+import "./style.css" 
+import { GrSend } from "react-icons/gr";
 
 
 const ReviewForm = ({productId}) => {
@@ -39,18 +41,21 @@ console.error(e)
       Character Count: {characterCount}/280
       {error && <span className="ml-2">Something went wrong...</span>}
     </p>
-    <form className="flex-row justify-center justify-space-between-md align-stretch"
+    <form className="flex-row justify-center justify-space-between-md align-stretch review-form"
     onSubmit={handleFormSubmit}>
-      <textarea
-        placeholder="Leave a review for this product..."
-        value={reviewBody}
-        onChange={handleChange}
-        className="form-input col-12 col-md-9"
-      ></textarea>
-
-      <button className="btn col-12 col-md-3" type="submit">
-        Submit
-      </button>
+    <div className='review-form-container'>
+    <textarea
+    placeholder="Leave a review for this product..."
+    value={reviewBody}
+    onChange={handleChange}
+    className="review-form-input col-12 col-md-9 review-input"
+  ></textarea>
+  <button className="review-btn col-12 col-md-3" type="submit">
+    <GrSend className='GrSend' />
+  </button>
+    
+    </div>
+     
     </form>
   </div>
   )

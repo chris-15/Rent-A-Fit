@@ -99,7 +99,7 @@ function Detail() {
         <div className="details-body-container">
       
         <div className="details-body">
-          <Link to="/">← Back to Products</Link>
+          <Link to="/" className="back-to-products">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
           <div className="details-body-img-parent">

@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
+import ReviewForm from '../components/ReviewForm'
+import ReviewList from '../components/ReviewList'
+import Auth from '../utils/auth'
 import { useStoreContext } from "../utils/GlobalState";
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_PRODUCTS,
+
 } from "../utils/actions";
-import { QUERY_PRODUCTS } from "../utils/queries";
+import { QUERY_PRODUCTS, QUERY_PRODUCTS_WITH_REVIEWS } from "../utils/queries";
 import Cart from "../components/Cart";
 import { idbPromise } from "../utils/helpers";
 
@@ -20,7 +23,7 @@ function Detail() {
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS);
 
   const { products, cart } = state;
 
@@ -61,16 +64,17 @@ function Detail() {
 
   useEffect(() => {
     // already in global store
-    if (products.length) {
-      setCurrentProduct(products.find(product => product._id === id));
-    } 
-    // retrieved from server
-    else if (data) {
+    if(data){
+      console.log(data.products)
+    }
+  
+    console.log(currentProduct)
+    if (data) {
+      setCurrentProduct(data.products.find(product => product._id === id));
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
       });
-  
       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
       });
@@ -84,33 +88,57 @@ function Detail() {
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+  }, [products, data, loading, dispatch, id, currentProduct]);
 
+  if(loading){
+    return <h1>Loading</h1>
+  }
   return (
     <>
-      {currentProduct ? (
-        <div className="">
-          <Link to="/">← Back to Products</Link>
+      {currentProduct !== {} ? (
+        <div className="details-body-container">
+      
+        <div className="details-body">
+          <Link to="/" className="back-to-products">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
+          <div className="details-body-img-parent">
+          <img
+          className="details-body-img-contaier"
+          src={`${currentProduct.image}`}
+          alt={currentProduct.name}
+        />
+          </div>
+          
+          <p className="details-description">{currentProduct.description}</p>
 
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
-            <button onClick={addToCart}>Add to Cart</button>
+          <p className="details-price-container">
+              <div className="details-price">
+              ${currentProduct.price}{" "} / Day
+              
+              </div>
+            <div>
+            <button onClick={addToCart}
+            className='add-to-cart-btn'>Rent</button>
             <button
+            className='delete-from-cart-btn'
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
+            </div>
           </p>
 
-          <img
-            src={`${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+          
+
+          {console.log(currentProduct)} 
+
+       { data.products.reviews ? <ReviewList reviews={currentProduct.reviews } /> : <p className="no-reviews-yet">No Reviews yet</p>}  
+          
+          {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
+
+        </div>
         </div>
       ) : null}
       {/* {loading ? <img src={} alt="loading" /> : null} */}

@@ -15,6 +15,7 @@ import AddPost from './components/AddPost'
 import OrderHistory from "./pages/OrderHistory";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
+import Profile from "./pages/Profile";
 import Footer from './components/Footer'
 import { StoreProvider } from "./utils/GlobalState";
 
@@ -47,6 +48,7 @@ function App() {
             <Nav />
             <Routes>
               <Route path='/addpost' element={<AddPost />} />
+              <Route path="/profile/:username" element={<Profile />} />
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />

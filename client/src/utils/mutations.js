@@ -45,6 +45,20 @@ export const ADD_PHOTO = gql`
   }
 `
 
+export const ADD_REVIEW = gql ` 
+mutation AddReview($productId: ID!, $reviewBody: String!) {
+  addReview(productId: $productId, reviewBody: $reviewBody) {
+    reviews {
+      reviewBody
+      createdAt
+      _id
+    }
+    username
+    name
+  }
+}
+`
+
 export const ADD_USER = gql`
  mutation addUser($username: String!, $email: String!, $password: String!){
   addUser(username: $username, email: $email, password: $password){

@@ -5,6 +5,7 @@ import ProductItem from "../ProductItem";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { QUERY_PRODUCTS } from "../../utils/queries";
+import './style.css'
 
 import { idbPromise } from "../../utils/helpers";
 
@@ -49,11 +50,11 @@ function ProductList() {
   }
 
   return (
-    <div className="">
-      <h2>Our Products:</h2>
+    <div className="product-list-container">
+      <h2>Our Products</h2>
   
       {state.products.length ? (
-        <div className="flex-row">
+        <div className="flex-row justify-center product-list">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
@@ -62,7 +63,9 @@ function ProductList() {
               name={product.name}
               price={product.price}
               quantity={product.quantity}
+              username={product.username}
             />
+
           ))}
         </div>
       ) : (

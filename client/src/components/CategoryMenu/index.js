@@ -6,7 +6,7 @@ import {
   UPDATE_CURRENT_CATEGORY,
 } from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
-
+import './style.css'
 import { idbPromise } from "../../utils/helpers";
 
 function CategoryMenu() {
@@ -43,18 +43,23 @@ function CategoryMenu() {
     };
   
     return (
-      <div>
-        <h2>Choose a Category:</h2>
-        {categories.map((item) => (
-          <button
-            key={item._id}
-            onClick={() => {
-              handleClick(item._id);
-            }}
-          >
-            {item.name}
-          </button>
-        ))}
+      <div className='categoryMenu'>
+      <h2>Choose a Category:</h2>
+      <div className='categoryMenu_items'>
+      {categories.map((item) => (
+        <button className='categoryButtons'
+          key={item._id}
+          onClick={() => {
+            handleClick(item._id);
+          }}
+        >
+          {item.name}
+        </button>
+      ))}
+      
+      </div>
+      
+        
       </div>
     );
   }

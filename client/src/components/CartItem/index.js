@@ -1,9 +1,10 @@
 import React from "react";
-
+import { MdCancel} from "react-icons/md";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 
 import { idbPromise } from "../../utils/helpers";
+import './style.css'
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -38,17 +39,19 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="">
+    <div className="flex-row cart-item-body">
       <div>
-        <img src={`/images/${item.image}`} alt="" />
+        <img src={item.image} alt="" className="cart-img"/>
       </div>
       <div>
         <div>
-          {item.name}, ${item.price}
+          {item.name},  <span className="cartItemPrice">${item.price}</span> 
         </div>
-        <div>
-          <span>Qty:</span>
+
+        <div className="cart-item-input-container">
+          <span>Days: </span>
           <input
+      className="cart-item-input"
             type="number"
             placeholder="1"
             value={item.purchaseQuantity}
@@ -59,7 +62,7 @@ const CartItem = ({ item }) => {
             aria-label="trash"
             onClick={() => removeFromCart(item)}
           >
-            🗑️
+            <MdCancel />
           </span>
         </div>
       </div>

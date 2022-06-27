@@ -251,6 +251,73 @@
   .float-label:focus-within label {
     transform: translate(0, 12px) scale(0.75);
   }
+
+
+.details-body-container{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  /* justify-items: center;
+  align-content: center; */
+  /* width: 60%; */
+}
+.back-to-products{
+  color: black;
+  font-family: 'Nunito Sans', sans-serif;
+}
+  /* details styling */
+  .details-body{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+  }
+  .details-body h2{
+    font-size: 2.00rem;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .details-body-img-contaier{
+    width: 100%;
+    
+    height: 510px;
+  }
+  .details-body-img-contaier img{
+    width: 100%;
+    border-radius: 15px;
+    height: 100%;
+    border-radius: 5%;
+  }
+  .details-body-img-parent{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .details-description{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.20rem;
+  }
+  .details-price-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .details-price{
+    font-weight: 600;
+    font-size: 1.50rem;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .no-reviews-yet{
+    text-align: center ;
+  }
+ 
+  .add-to-cart-btn, .delete-from-cart-btn{
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    border-radius: 10px;
+    padding: 7px 20px 7px 20px;
+    background-color: rgb(128, 79, 234);
+  }
   .container {
     width: 100%;
     max-width: 1200px;
@@ -261,6 +328,10 @@
   .flex-row {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .justify-center{
+    justify-content: center;
   }
   
   .space-between {
@@ -310,12 +381,7 @@
     padding-top: var(--spacing-two);
     padding-bottom: var(--spacing-two);
   }
-  
-  .card {
-    width: 25%;
-    text-align: center;
-  
-  }
+
   .product-img{
     border-radius: 10px;
    width: 100%;
@@ -325,6 +391,18 @@
   }
   
   @media screen and (max-width: 768px) {
+    .details-body-container{
+      width: 100%;
+      
+    }
+    .details-description p {
+      font-size: 2.00rem;
+    }
+    .details-body {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+  }
     .signup-container{
       display: flex;
       flex-direction: column-reverse;
@@ -346,7 +424,7 @@
         height: 60%;
         width: 60%;
       
-        
+      
     }
    .submit-button{
       width: 100%;
@@ -358,5 +436,7 @@
     
     .card {
       width: 100%;
+      margin-top: 20%;
+      height: 300px;
     }
   }

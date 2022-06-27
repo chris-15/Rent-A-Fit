@@ -22,7 +22,7 @@ db.once('open', async () => {
       name: 'Nikes',
       description:
         'Hardly worn shoes',
-      image: 'used-nikes.jpg',
+      image: "http://res.cloudinary.com/rentafit/image/upload/v1656356645/your_folder_name/btahpz0a5uhk4dnlyxev.jpg",
       category: categories[0]._id,
       price: 2.99,
       quantity: 500

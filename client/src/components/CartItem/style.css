@@ -1,0 +1,22 @@
+.cart-img{
+    width: 70px;
+    height: 70px;
+    border-radius: .29rem;
+}
+
+.cart-item-body{
+    font-family: 'Nunito Sans', sans-serif;
+    justify-content: space-between;
+}
+.cart-item-input-container{
+margin-top: 5%;
+}
+.cart-item-input{
+    border: solid .05rem rgb(222, 222, 222);
+    border-radius: .30rem;
+
+}
+
+.cartItemPrice{
+    font-weight: 900;
+}

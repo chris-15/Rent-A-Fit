@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
-
+import { FaTimes} from 'react-icons/fa'
+import { BsBag } from "react-icons/bs";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-
+import './style.css'
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
 
@@ -35,8 +36,8 @@ const Cart = () => {
   if (!state.cartOpen) {
     return (
       <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
+        <span role="img" aria-label="bag">
+          <BsBag />
         </span>
       </div>
     );
@@ -46,7 +47,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="close" onClick={toggleCart}>
-        [close]
+      <FaTimes />
       </div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
@@ -65,9 +66,6 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
           You haven't added anything to your cart yet!
         </h3>
       )}

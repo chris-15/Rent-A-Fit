@@ -48,6 +48,8 @@ username
     <div className="card px-1 py-1 ">
     <Link to={`/profile/${username}`}>{username}</Link>
       <Link to={`/products/${_id}`} >
+
+      
         <img className="product-img"
           alt={name}
           src={image}

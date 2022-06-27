@@ -5,11 +5,11 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Shoes' },
+    { name: 'Accessories' },
+    { name: 'Tops' },
+    { name: 'Sports' },
+    { name: 'Headwear' }
   ]);
 
   console.log('categories seeded');
@@ -19,41 +19,41 @@ db.once('open', async () => {
   const products = await Product.insertMany([
     {
       username: "Eholt",
-      name: 'Tin of Cookies',
+      name: 'Nikes',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
+        'Hardly worn shoes',
+      image: 'used-nikes.jpg',
       category: categories[0]._id,
       price: 2.99,
       quantity: 500
     },
     {
       username: "Eholt",
-      name: 'Canned Coffee',
+      name: 'Air Force Nikes',
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
+      image: 'blue-white-nikes.jpg',
       category: categories[0]._id,
       price: 1.99,
       quantity: 500
     },
     {
       username: "Eholt",
-      name: 'Toilet Paper',
+      name: 'Bracelet 10k gold',
       category: categories[1]._id,
       description:
         'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
+      image: 'necklaces.jpg',
       price: 7.99,
       quantity: 20
     },
     {
       username: "Eholt",
-      name: 'Handmade Soap',
+      name: 'ray bans',
       category: categories[1]._id,
       description:
         'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
+      image: 'ray-bans.jpg',
       price: 3.99,
       quantity: 50
     },
@@ -69,11 +69,11 @@ db.once('open', async () => {
     },
     {
       username: "Eholt",
-      name: 'Camera',
+      name: 'hardly worn top',
       category: categories[2]._id,
       description:
         'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
+      image: 'white-top.jpg',
       price: 399.99,
       quantity: 30
     },

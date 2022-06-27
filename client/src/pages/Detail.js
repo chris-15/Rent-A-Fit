@@ -23,7 +23,8 @@ function Detail() {
 
   const [currentProduct, setCurrentProduct] = useState({});
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS);
+  const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS,
+    );
 
   const { products, cart } = state;
 
@@ -71,10 +72,10 @@ function Detail() {
     console.log(currentProduct)
     if (data) {
       setCurrentProduct(data.products.find(product => product._id === id));
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products
-      });
+      // dispatch({
+      //   type: UPDATE_PRODUCTS,
+      //   products: data.products
+      // });
       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
       });

@@ -306,6 +306,10 @@
     font-size: 1.50rem;
     font-family: 'Nunito Sans', sans-serif;
   }
+
+  .no-reviews-yet{
+    text-align: center ;
+  }
  
   .add-to-cart-btn, .delete-from-cart-btn{
     font-family: 'Nunito Sans', sans-serif;

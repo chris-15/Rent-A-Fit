@@ -134,7 +134,7 @@ function Detail() {
 
           {console.log(currentProduct)} 
 
-       { currentProduct ? <ReviewList reviews={currentProduct.reviews } /> : <p>No Reviews yet... Leave a review</p>}  
+       { data.products.reviews ? <ReviewList reviews={currentProduct.reviews } /> : <p className="no-reviews-yet">No Reviews yet</p>}  
           
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 

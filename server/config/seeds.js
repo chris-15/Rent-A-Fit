@@ -58,6 +58,7 @@ db.once('open', async () => {
       quantity: 50
     },
     {
+
       username: "Eholt",
       name: 'renting out my hat',
       category: categories[1]._id,

@@ -4,6 +4,7 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext} from '../../utils/GlobalState.js'
 import { ADD_TO_CART, UPDATE_CART_QUANTITY} from '../../utils/actions'
 import './style.css'
+import { motion } from 'framer-motion'
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext()
@@ -60,7 +61,7 @@ username
       <div className="" >
         <div>Available </div>
       </div>
-      <button className='add-to-cart' onClick={addToCart}>Add to cart</button>
+      <motion.button whileHover={{ scale:1.1}} className='add-to-cart add-to-cart-gradient' onClick={addToCart}>Add to cart</motion.button>
     </div>
   );
 }

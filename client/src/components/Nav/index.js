@@ -44,10 +44,11 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <div>
+        <div className="flex-row">
         <div className="user-profile">
-        <Link to='/profile'></Link>
+        <Link to='/profile/'> <FaUser className="FaUser"/> </Link>
         </div>
+
           <div className="flex-row  mx-3 nav-items">
             <div className="mx-1 ">
               <Link to="/addpost">Add Post</Link>
@@ -107,7 +108,7 @@ function Nav() {
           <div className="mx-1 icons">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <Link
-              to="/"
+              to="/profile"
               onClick={() => handleClick("me")}
               name="me"
               className={active.me ? "active" : "not-active"}

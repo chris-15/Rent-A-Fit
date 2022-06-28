@@ -9,10 +9,31 @@
    border-top: .5px solid rgb(210, 209, 209);
 
 }
-/* body{
+body{
     margin: 0%;
-} */
+}
+ .user-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.2%;
+    right: 23%;
+}
 
+.FaUser{
+    position: relative;
+    right: 20%;
+    font-size: 3.0rem;
+    padding: 10px;
+    border: 1px solid rgb(216, 215, 215);
+    border-radius: 50%;
+    color: rgb(99, 99, 99)
+}
+.FaUser:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: .3s ease-in;
+}
 .active{
     color: #826aed;
 }
@@ -35,7 +56,25 @@
 
 }
 
-@media screen and (max-width: 750px){
+@media screen and (min-width:  1600px){
+    .user-profile{
+        top: 1.2%;
+    right: 12%;
+    }
+
+}
+@media screen and (min-width:  1400px){
+    .user-profile{
+        top: 1.2%;
+    right: 15%;
+    }
+
+}
+
+@media screen and (max-width: 760px){
+    .user-profile{
+        display: none;
+    }
     .bottom-nav-div{
         display: block;
         z-index: 9999;

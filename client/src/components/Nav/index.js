@@ -43,10 +43,12 @@ function Nav() {
 
   function showNavigation() {
     if (Auth.loggedIn()) {
+      
+      console.log(Auth.getProfile())
       return (
         <div className="flex-row">
         <div className="user-profile">
-        <Link to='/profile/'> <FaUser className="FaUser"/> </Link>
+        <Link to={'/profile/' + Auth.getProfile().data.username}> <FaUser className="FaUser"/> </Link>
         </div>
 
           <div className="flex-row  mx-3 nav-items">

@@ -93,22 +93,22 @@ query Me {
 }
 `
 export const QUERY_USER = gql`
-  {
-    user {
-      firstName
-      lastName
-      orders {
-        _id
-        rentalDate
-        products {
-          _id
-          name
-          description
-          price
-          quantity
-          image
-        }
+  query User($username: String!) {
+  user(username: $username) {
+    _id
+    username
+    product {
+      name
+      image
+      description
+      category {
+        name
+      }
+      reviews {
+        reviewBody
       }
     }
+    email
   }
+}
 `;

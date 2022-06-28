@@ -4,6 +4,7 @@ import { FaSearch} from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import {FaRegTimesCircle} from 'react-icons/fa'
 
+
 const SearchBar = () => {
 
   const [input, setInput] = useState("")

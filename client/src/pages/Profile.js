@@ -7,19 +7,22 @@ import { useQuery } from '@apollo/client'
 
 
 const Profile = () => {
-    const { username: userParam } = useParams();
+    const { username } = useParams();
 
-    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, { 
-        variables: { username: userParam}
+    const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, { 
+        variables: { username }
     })
 
     const user = data?.user || data?.me || []
-
+console.log(Auth.getProfile())
       //navigate to personal profile page if the username is the logged-in user's
-    if(Auth.loggedIn() && Auth.getProfile().data.username === userParam){
-        return <Navigate to='/profile' />
+    if(Auth.loggedIn() && Auth.getProfile().data.username === username){
+        // return <Navigate to='/profile' />
     }
+    //   return  <Navigate to='/login' />
+    // }
 
+    console.log(user)
     if(!user?.username){
         return(
             <h4>
@@ -35,7 +38,7 @@ const Profile = () => {
   return (
     <div>
     <div className='flex-row mb-3'>
-    <h2>Viewing { userParam ? `${user.username}'s` : 'Your'} </h2>
+    <h2>Viewing { username ? `${user.username}'s` : 'Your'} </h2>
     </div>
 
     <div className=' col-12 col-lg-8 flex-row justify-space-between mb-3'>

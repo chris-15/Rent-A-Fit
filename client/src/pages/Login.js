@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import { Link ,  Navigate} from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 import WELCOMEIMG from '../assets/login.svg'
 import { FaChevronLeft} from 'react-icons/fa'
+ 
 
 function Login(props) {
 
@@ -24,9 +25,12 @@ function Login(props) {
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
+      alert(Auth.getProfile().data.username)
+  window.location.assign('/profile/' + Auth.getProfile().data.username)
     } catch (e) {
       console.log(e);
     }
+
   };
 
   function handleTextChange(name, value) {
@@ -94,7 +98,7 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row my-2 inputs">
-          <button type="submit" className='submit-button'>Submit</button>
+          <button type="submit" className='submit-button' >Submit</button>
         </div>
         <Link to="/signup" className='not-a-user'>Not a User? <span>Sign Up</span> </Link>
       </form>

@@ -5,6 +5,9 @@
     margin-top: 5%;
 }
 
+.product-list{
+    margin-bottom: 20%;
+}
 @media screen and (max-width: 768px) {
     .product-list-container{
         width: 100%;

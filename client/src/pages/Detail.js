@@ -69,15 +69,18 @@ function Detail() {
     }
   
     console.log(currentProduct)
-    if (data) {
-      setCurrentProduct(data.products.find(product => product._id === id));
+    if (products.length) {
+      setCurrentProduct(products.find(product => product._id === id));
+    } 
+    else if (data) {
+      
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
       });
-      data.products.forEach((product) => {
+       data.products.forEach((product) => {
         idbPromise('products', 'put', product);
-      });
+      }); 
     }
     // get cache from idb
     else if (!loading) {

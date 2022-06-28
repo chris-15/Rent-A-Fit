@@ -1,0 +1,103 @@
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 30%;
+    max-width: 30%;
+    max-height: 60%;
+
+    overflow: auto;
+    padding: .5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    border-bottom-left-radius: .5rem;
+    background-color: white;
+    z-index: 999;
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+
+
+.cart h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid darkgray;
+    padding-bottom: .5rem;
+    margin: 1rem 0;
+  }
+
+  .cart h3 { 
+    text-align: center;
+    font-size: medium;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  
+  .cart .close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+    color: black;
+
+  }
+  .cart .close:hover {
+    text-decoration: underline;
+  }
+  
+  .cart-closed {
+    position: fixed;
+    top: 10%;
+    right: 1%;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: white;
+    border: .029rem solid lightgray ;
+    border-radius: 50%;
+    padding: .40rem;
+    width: 50px;
+    height: 50px;
+  }
+  .cart-closed span{
+    font-size: 2rem;
+      margin: auto;
+    color: rgb(75, 75, 75);
+  }
+  
+  .cart button{
+    background-color: transparent;
+    font-weight: 900;
+    font-family: 'Nunito Sans', sans-serif;
+    border-bottom: 1px solid;
+  }
+  .cart-closed:hover {
+    transition: .3s ease-in;    
+  }
+  
+  .cart img {
+    width: 70px;
+    margin-right: 1rem;
+  }
+  
+  .cart input {
+    width: 50px;
+    padding: 0;
+    margin: 0 .5rem 1rem 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .cart {
+        /* relative declaration will return the cart to its default position in the layout instead of being fixed in the top-right corner. */
+      position: relative;
+      top: 0;
+      max-width: 100%;
+      max-height: auto;
+      box-shadow: none;
+      background-color: white;
+      border-top: 1px solid rgb(198, 198, 198);
+      border-radius: .5rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+  
+    .cart-closed {
+      position: fixed;
+      margin: 0 auto;
+    }
+  }

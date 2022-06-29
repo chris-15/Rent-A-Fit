@@ -40,6 +40,19 @@ query Products {
   }
 }
 `
+
+export const FIND_PRODUCT = gql `
+query FindProduct($input: ProductInputFilter) {
+  findProduct(input: $input) {
+    _id
+    name
+    image
+    description
+    username
+    price
+  }
+}
+`
 export const QUERY_ALL_PRODUCTS = gql`
   {
     products {
@@ -97,10 +110,13 @@ export const QUERY_USER = gql`
   user(username: $username) {
     _id
     username
-    product {
+    products {
+      username
       name
+      _id
       image
       description
+      price
       category {
         name
       }

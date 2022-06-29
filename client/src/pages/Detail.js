@@ -12,6 +12,7 @@ import {
   UPDATE_PRODUCTS,
 
 } from "../utils/actions";
+import REVIEWPHOTO from '../assets/reviews.svg'
 import { QUERY_PRODUCTS, QUERY_PRODUCTS_WITH_REVIEWS } from "../utils/queries";
 import Cart from "../components/Cart";
 import { idbPromise } from "../utils/helpers";
@@ -25,7 +26,7 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS);
 
-  const { products, cart } = state;
+  const { products, cart , } = state;
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id)
@@ -66,11 +67,14 @@ function Detail() {
     // already in global store
     if(data){
       console.log(data.products)
+
     }
   
-    console.log(currentProduct)
+    console.log(currentProduct.reviews)
+
     if (products.length) {
       setCurrentProduct(products.find(product => product._id === id));
+      console.log(currentProduct)
     } 
     else if (data) {
       
@@ -96,15 +100,21 @@ function Detail() {
   if(loading){
     return <h1>Loading</h1>
   }
+  console.log(currentProduct._id)
+  console.log(currentProduct.reviews)
   return (
     <>
       {currentProduct !== {} ? (
         <div className="details-body-container">
       
         <div className="details-body">
-          <Link to="/" className="back-to-products">← Back to Products</Link>
+          <Link to="/" className="back-to-products"> ← Back to Products</Link>
 
+          <div className="details-name-username-container">
           <h2>{currentProduct.name}</h2>
+          <Link to={`/profile/${currentProduct.username}`}><h2 id="details-username" className="products-username">{currentProduct.username}</h2></Link>
+          </div>
+          
           <div className="details-body-img-parent">
           <img
           className="details-body-img-contaier"
@@ -115,7 +125,7 @@ function Detail() {
           
           <p className="details-description">{currentProduct.description}</p>
 
-          <p className="details-price-container">
+          <div className="details-price-container">
               <div className="details-price">
               ${currentProduct.price}{" "} / Day
               
@@ -131,14 +141,14 @@ function Detail() {
               Remove from Cart
             </button>
             </div>
-          </p>
+          </div>
 
           
 
-          {console.log(currentProduct)} 
+          
         
           
-       { currentProduct ? <ReviewList reviews={currentProduct.reviews } /> : <p className="no-reviews-yet">No Reviews yet</p>}  
+       { currentProduct.reviews ? <ReviewList reviews={currentProduct.reviews } /> : <div className="reviewphoto-container"><img alt='reviewphoto' src={REVIEWPHOTO} className='reviewphoto'></img><p className="no-reviews-yet">No Reviews yet</p></div>}  
           
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 

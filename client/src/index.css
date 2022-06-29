@@ -179,6 +179,16 @@
     height: 100%;
   
   }
+  .login-or-sign-up-link{
+    padding: 3px 8px 3px 8px;
+    border-radius: 15px;
+  }
+  .login-or-sign-up-link:hover{
+    transition: .2s;
+    border: 1px solid #826aed;
+  
+background-color: rgb(128, 79, 234, 0.1);
+  }
   .FaChevronLeft{
     color: black;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -252,7 +262,9 @@
     transform: translate(0, 12px) scale(0.75);
   }
 
-
+#details-username{
+  font-size: 1.0rem;
+}
 .details-body-container{
   margin-top: 10%;
   display: flex;
@@ -278,7 +290,7 @@
   }
   .details-body-img-contaier{
     width: 100%;
-    
+    border-radius: 15px;
     height: 510px;
   }
   .details-body-img-contaier img{
@@ -300,6 +312,13 @@
   .details-price-container{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5%;
+  }
+  .details-name-username-container{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .details-price{
     font-weight: 600;
@@ -310,7 +329,19 @@
   .no-reviews-yet{
     text-align: center ;
   }
- 
+ /* details js ended */
+
+ /* profile js */
+.profile-component-h2{
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 3%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+ background-color: rgb(242, 242, 242);
+  border-radius: 15px;
+  padding: 10px;
+  font-size: medium;
+}
   .add-to-cart-btn, .delete-from-cart-btn{
     font-family: 'Nunito Sans', sans-serif;
     color: white;
@@ -320,7 +351,7 @@
   }
   .container {
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin-left: auto;
     margin-right: auto;
   }
@@ -385,11 +416,40 @@
   .product-img{
     border-radius: 10px;
    width: 100%;
+   height: 300px;
   }
   .error-text {
     color: var(--error);
   }
-  
+
+.page-not-found-container{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+  }
+  .page-not-found-container img{
+    margin-top: 5%;
+    width: 40%;
+  }
+  .page-not-found-container h1{
+    margin-top: 5%;
+    color: #272f32;
+  }
+  .reviewphoto-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    opacity: .5;
+  }
+  .reviewphoto{
+    width: 300px;
+ 
+  }
+  .reviewphoto-container p{
+    font-size: 1.3rem;
+  }
   @media screen and (max-width: 768px) {
     .details-body-container{
       width: 100%;
@@ -402,6 +462,9 @@
       display: flex;
       flex-direction: column;
       width: 95%;
+  }
+  .reviewphoto-container{
+    margin-top: 7%;
   }
     .signup-container{
       display: flex;
@@ -437,6 +500,8 @@
     .card {
       width: 100%;
       margin-top: 20%;
+    margin-bottom: 7%;
       height: 300px;
     }
+
   }

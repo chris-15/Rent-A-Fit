@@ -19,7 +19,9 @@ const handleChange = event => {
 
 //submit form
 const handleFormSubmit = async (event) => {
-  event.preventDefault();
+  //commit out
+  //to get reviews to display without manualy refreshing page
+  // event.preventDefault();
 
   try{
     await addReview({

@@ -1,0 +1,38 @@
+.user-posts-card{
+    width: 100%;
+
+}
+.user-posts-card-container{
+    width: 35%;
+    margin-bottom: 10%;
+
+}
+.product-img{
+    height: 275px;
+}
+.products-username{
+    text-align: left;
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+    color: black;
+}
+.products-username:hover{
+    text-decoration: underline;
+    transition: .4s;
+    text-decoration-thickness: 2.0px;
+}
+
+@media screen and (max-width: 768px) {
+    .user-posts-card{
+        width: 100%;
+        margin-top: 10%;
+    }
+    .user-posts-card-container{
+        width: 100%;
+        margin-bottom: 10%;
+    
+    }
+      
+    }

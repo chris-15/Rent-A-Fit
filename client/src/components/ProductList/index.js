@@ -10,6 +10,7 @@ import './style.css'
 import { idbPromise } from "../../utils/helpers";
 
 function ProductList() {
+
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;
@@ -22,7 +23,7 @@ function ProductList() {
       // store in the global state object
       dispatch({
         type: UPDATE_PRODUCTS,
-        products: data.products,
+        products:  data.products,
       });
 
       data.products.forEach((product) => {

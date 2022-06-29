@@ -280,7 +280,7 @@
   }
   .details-body-img-contaier{
     width: 100%;
-    
+    border-radius: 15px;
     height: 510px;
   }
   .details-body-img-contaier img{
@@ -409,6 +409,20 @@
   }
   .error-text {
     color: var(--error);
+  }
+
+.page-not-found-container{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+  }
+  .page-not-found-container img{
+    margin-top: 5%;
+    width: 40%;
+  }
+  .page-not-found-container h1{
+    margin-top: 5%;
+    color: #272f32;
   }
   
   @media screen and (max-width: 768px) {

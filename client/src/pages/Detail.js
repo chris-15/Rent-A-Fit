@@ -25,7 +25,7 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS);
 
-  const { products, cart } = state;
+  const { products, cart , reviews } = state;
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id)
@@ -66,11 +66,14 @@ function Detail() {
     // already in global store
     if(data){
       console.log(data.products)
+
     }
   
-    console.log(currentProduct)
+    console.log(currentProduct.reviews)
+
     if (products.length) {
       setCurrentProduct(products.find(product => product._id === id));
+      console.log(currentProduct)
     } 
     else if (data) {
       
@@ -97,6 +100,7 @@ function Detail() {
     return <h1>Loading</h1>
   }
   console.log(currentProduct._id)
+  console.log(currentProduct.reviews)
   return (
     <>
       {currentProduct !== {} ? (
@@ -140,10 +144,10 @@ function Detail() {
 
           
 
-          {console.log(currentProduct)} 
+          
         
           
-       { currentProduct ? <ReviewList reviews={currentProduct.reviews } /> : <p className="no-reviews-yet">No Reviews yet</p>}  
+       { currentProduct.reviews ? <ReviewList reviews={currentProduct.reviews } /> : <p className="no-reviews-yet">No Reviews yet</p>}  
           
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 

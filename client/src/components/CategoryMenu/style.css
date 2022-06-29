@@ -16,9 +16,9 @@
     margin-right: 2%;
     font-weight: 700;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
+    border-radius: 15px;
 }
 .categoryButtons:hover{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    transition: .3s ease-in;
+    transition: .1s ease-in;
 }

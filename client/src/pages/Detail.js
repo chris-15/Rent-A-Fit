@@ -12,6 +12,7 @@ import {
   UPDATE_PRODUCTS,
 
 } from "../utils/actions";
+import REVIEWPHOTO from '../assets/reviews.svg'
 import { QUERY_PRODUCTS, QUERY_PRODUCTS_WITH_REVIEWS } from "../utils/queries";
 import Cart from "../components/Cart";
 import { idbPromise } from "../utils/helpers";
@@ -25,7 +26,7 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS_WITH_REVIEWS);
 
-  const { products, cart , reviews } = state;
+  const { products, cart , } = state;
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id)
@@ -147,7 +148,7 @@ function Detail() {
           
         
           
-       { currentProduct.reviews ? <ReviewList reviews={currentProduct.reviews } /> : <p className="no-reviews-yet">No Reviews yet</p>}  
+       { currentProduct.reviews ? <ReviewList reviews={currentProduct.reviews } /> : <div className="reviewphoto-container"><img alt='reviewphoto' src={REVIEWPHOTO} className='reviewphoto'></img><p className="no-reviews-yet">No Reviews yet</p></div>}  
           
           {Auth.loggedIn() && <ReviewForm productId={currentProduct._id} />}
 

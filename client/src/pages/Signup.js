@@ -104,15 +104,16 @@ function handleTextChange(name, value) {
             value={formState.password}
             onChange={handleChange}
           />
-         
+          <label htmlFor='password' className={ isActive.password ? 'Active' : ''}>
+          password</label>
         </div>
         <div className="flex-row my-2 inputs">
           <button type="submit" className='submit-button'>submit</button>
         </div>
-        <Link to="/login" className='already-a-user'>Already a User? <span>Login In</span> </Link>
+        <Link to="/login" className='already-a-user'>Already a User? <span className='login-or-sign-up-link'>Login In</span> </Link>
       </form>
       <div className='login-right'>
-      <img alt='sign up photo' src={LOGINPHOTO} className='login-right-photo'></img>
+      <img alt='sign-up-photo' src={LOGINPHOTO} className='login-right-photo'></img>
       </div>
     </div>
   );

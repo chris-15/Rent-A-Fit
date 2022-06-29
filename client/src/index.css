@@ -179,6 +179,16 @@
     height: 100%;
   
   }
+  .login-or-sign-up-link{
+    padding: 3px 8px 3px 8px;
+    border-radius: 15px;
+  }
+  .login-or-sign-up-link:hover{
+    transition: .2s;
+    border: 1px solid #826aed;
+  
+background-color: rgb(128, 79, 234, 0.1);
+  }
   .FaChevronLeft{
     color: black;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -406,6 +416,7 @@
   .product-img{
     border-radius: 10px;
    width: 100%;
+   height: 300px;
   }
   .error-text {
     color: var(--error);
@@ -424,7 +435,21 @@
     margin-top: 5%;
     color: #272f32;
   }
-  
+  .reviewphoto-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    opacity: .5;
+  }
+  .reviewphoto{
+    width: 300px;
+ 
+  }
+  .reviewphoto-container p{
+    font-size: 1.3rem;
+  }
   @media screen and (max-width: 768px) {
     .details-body-container{
       width: 100%;
@@ -472,7 +497,8 @@
     .card {
       width: 100%;
       margin-top: 20%;
-    
+    margin-bottom: 7%;
       height: 300px;
     }
+
   }

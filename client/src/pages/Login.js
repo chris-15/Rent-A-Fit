@@ -99,7 +99,7 @@ function Login(props) {
         <div className="flex-row my-2 inputs">
           <button type="submit" className='submit-button' >Submit</button>
         </div>
-        <Link to="/signup" className='not-a-user'>Not a User? <span>Sign Up</span> </Link>
+        <Link to="/signup" className='not-a-user'>Not a User? <span className='login-or-sign-up-link'>Sign Up</span> </Link>
       </form>
 
       <div className='login-right'>

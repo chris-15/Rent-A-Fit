@@ -27,7 +27,7 @@ const typeDefs = gql`
   type User {
     _id: ID
    username: String
-    product: [Product]
+    products: [Product]
     email: String
     orders: [Order]
   }
@@ -44,6 +44,11 @@ const typeDefs = gql`
     user: User
   }
 
+  input ProductInputFilter{
+    description: String
+    name: String
+    image: String
+  }
   type Query {
     categories: [Category]
     products(category: ID, username: String): [Product]
@@ -51,8 +56,12 @@ const typeDefs = gql`
     user(username: String!): User
     users: [User]
     me: User
+        # search
+        findProduct(input: ProductInputFilter): [Product]
     order(_id: ID!): Order
   }
+
+ 
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
@@ -64,6 +73,8 @@ const typeDefs = gql`
     #our mutation type for image upload which accepts the image location as a string whether local or remote.It returns a string.
     uploadPhoto(photo: String): String
     addProduct(description: String!, image: String!, price: Float!, name: String!): Product
+
+   
   }
 `;
 

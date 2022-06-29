@@ -4,7 +4,7 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 .review-container-parent {
-    height: 500px;
+    height: 450px;
     overflow: scroll;
 }
 .review-container{

@@ -31,11 +31,12 @@ body{
     color: rgb(99, 99, 99)
 }
 .FaUser:hover{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    transition: .3s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .3s;
+    transition-timing-function: ease-in-out;
 }
 .active{
-    color: #826aed;
+    color: #6446ea;
 }
 .not-active{
     color: rgb(45, 45, 45);

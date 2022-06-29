@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import ProductList from '../components/ProductList'
 import  { QUERY_ME, QUERY_USER} from '../utils/queries'
 import { useQuery } from '@apollo/client'
+import UserProductList from '../components/UserProductList'
 
 
 const Profile = () => {
@@ -14,7 +15,7 @@ const Profile = () => {
     })
 
     const user = data?.user || data?.me || []
-console.log(Auth.getProfile())
+console.log(user)
       //navigate to personal profile page if the username is the logged-in user's
     if(Auth.loggedIn() && Auth.getProfile().data.username === username){
         // return <Navigate to='/profile' />
@@ -37,14 +38,15 @@ console.log(Auth.getProfile())
 
   return (
     <div>
-    <div className='flex-row mb-3'>
-    <h2>Viewing { username ? `${user.username}'s` : 'Your'} </h2>
+    <div className='flex-row justify-center mb-3'>
+    <h2 className='profile-component-h2'> { username ? `${user.username}'s Profile` : 'Your'} </h2>
     </div>
 
-    <div className=' col-12 col-lg-8 flex-row justify-space-between mb-3'>
+    <div className='flex-row justify-center mb-3'>
     {/* Print PRODUCT List */}
-    <ProductList 
+    <UserProductList
     username={user.username}
+    products={user.products}
     />
     </div>
 

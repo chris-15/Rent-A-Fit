@@ -44,10 +44,27 @@ font-size: x-large;
 color: rgb(78, 78, 78);
 }
 
+.filtered-posts-card-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(251, 251, 251, 0.955);
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space:nowrap;
+    margin-bottom: 3%;
+    margin: auto;
+}
 
-
+@media screen and (max-width: 950px){
+    .filtered-posts-card{
+        width: 100%;
+    }
+    
+}
 
 @media screen and (max-width: 768px) {
+
     .searchForm{
         width: 90%;
     }

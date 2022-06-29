@@ -36,7 +36,9 @@
     right: .5rem;
     cursor: pointer;
     color: black;
-
+  }
+  .FaTimes{
+    font-size: 1.0rem;
   }
   .cart .close:hover {
     text-decoration: underline;

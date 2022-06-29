@@ -1,14 +1,13 @@
 import React from "react";
+import NOTFOUND from '../assets/notfound.svg'
 
 const NoMatch = () => {
   return (
-    <div>
+    <div className="page-not-found-container">
     
-        <h1>404 Page Not Found</h1>
+       <img src={NOTFOUND} alt="notfound"></img>
         <h1>
-          <span role="img" aria-label="Face With Rolling Eyes Emoji">
-            🙄
-          </span>
+          Page not found
         </h1>
     </div>
   );

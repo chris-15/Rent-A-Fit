@@ -110,7 +110,7 @@ function Nav() {
           <div className="mx-1 icons">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <Link
-              to="/profile"
+              to={"/profile/" + Auth.getProfile().data.username}
               onClick={() => handleClick("me")}
               name="me"
               className={active.me ? "active" : "not-active"}

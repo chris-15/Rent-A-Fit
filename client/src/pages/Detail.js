@@ -104,7 +104,11 @@ function Detail() {
         <div className="details-body">
           <Link to="/" className="back-to-products">← Back to Products</Link>
 
+          <div className="details-name-username-container">
           <h2>{currentProduct.name}</h2>
+          <h2>{currentProduct.username}</h2>
+          </div>
+          
           <div className="details-body-img-parent">
           <img
           className="details-body-img-contaier"
@@ -115,7 +119,7 @@ function Detail() {
           
           <p className="details-description">{currentProduct.description}</p>
 
-          <p className="details-price-container">
+          <div className="details-price-container">
               <div className="details-price">
               ${currentProduct.price}{" "} / Day
               
@@ -131,7 +135,7 @@ function Detail() {
               Remove from Cart
             </button>
             </div>
-          </p>
+          </div>
 
           
 

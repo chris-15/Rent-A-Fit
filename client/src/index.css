@@ -300,6 +300,11 @@
   .details-price-container{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5%;
+  }
+  .details-name-username-container{
+    display: flex;
+    justify-content: space-between;
   }
   .details-price{
     font-weight: 600;
@@ -310,7 +315,19 @@
   .no-reviews-yet{
     text-align: center ;
   }
- 
+ /* details js ended */
+
+ /* profile js */
+.profile-component-h2{
+  text-align: center;
+  font-family: 'Nunito Sans', sans-serif;
+  margin-top: 3%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+ background-color: rgb(242, 242, 242);
+  border-radius: 15px;
+  padding: 10px;
+  font-size: medium;
+}
   .add-to-cart-btn, .delete-from-cart-btn{
     font-family: 'Nunito Sans', sans-serif;
     color: white;
@@ -437,6 +454,7 @@
     .card {
       width: 100%;
       margin-top: 20%;
+    
       height: 300px;
     }
   }

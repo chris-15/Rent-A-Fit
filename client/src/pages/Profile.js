@@ -38,8 +38,8 @@ console.log(user)
 
   return (
     <div>
-    <div className='flex-row mb-3'>
-    <h2>Viewing { username ? `${user.username}'s` : 'Your'} </h2>
+    <div className='flex-row justify-center mb-3'>
+    <h2 className='profile-component-h2'> { username ? `${user.username}'s Profile` : 'Your'} </h2>
     </div>
 
     <div className='flex-row justify-center mb-3'>

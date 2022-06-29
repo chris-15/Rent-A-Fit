@@ -35,6 +35,7 @@ const productSchema = new Schema({
     required: false,
   },
   reviews: [reviewSchema],
+
 },
 {
   toJSON: {
@@ -42,7 +43,8 @@ const productSchema = new Schema({
   }
 });
 
-
+const result = productSchema.index({ name: 'text', description: 'text'})
+console.log("THISRESULT " + result)
 
 productSchema.virtual('reviewCount').get(function(){
   return this.review.length;

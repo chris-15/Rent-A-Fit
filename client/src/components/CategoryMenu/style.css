@@ -1,17 +1,16 @@
-.categoryMenu > h2{
-    text-align: center;
-    font-family: 'Pathway Gothic One', sans-serif;
+.categoryMenu {
+height: 100px;
 }
 
 .categoryMenu_items{
-
     display: flex;
+
     justify-content: center;
 }
 
 .categoryButtons{
     background-color: white;
-    margin-top: 2%;
+    margin-top: 3%;
     font-family: 'Nunito Sans', sans-serif;
     margin-right: 2%;
     font-weight: 700;
@@ -21,4 +20,21 @@
 .categoryButtons:hover{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: .1s ease-in;
+
+}
+
+@media screen and (min-width: 1700px){
+    .categoryButtons{
+        font-size: 2.0rem;
+        border-radius: 20px;
+
+    }
+}
+@media screen and (max-width: 768px){
+    .categoryMenu_items{
+        margin-top: 3%;
+    }
+    .categoryButtons{
+        margin-top: 7%;
+    }
 }

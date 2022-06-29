@@ -49,6 +49,7 @@ query FindProduct($input: ProductInputFilter) {
     image
     description
     username
+    price
   }
 }
 `

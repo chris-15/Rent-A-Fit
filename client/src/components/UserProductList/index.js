@@ -1,39 +1,38 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { Link } from 'react-router-dom'
+import './style.css'
 
 
-import { UPDATE_PRODUCTS } from "../../utils/actions";
-import { QUERY_ME, QUERY_USER } from "../../utils/queries";
 
-
-function UserProductList({ products, name, image, price,username}) {
-
+function UserProductList({ products, name, }) {
+  console.log(products)
+console.log(products._id)
+  // <motion.button whileHover={{ scale:1.1}} className='add-to-cart add-to-cart-gradient' onClick={addToCart}>Add to cart</motion.button>
+  
     return (
-        <div>
-          <h3>{name}</h3>
+        <div className="user-posts-card-container" >
+        
           {products &&
             products.map(product => (
-              <div key={product._id} className="card mb-3">
-                <p className="card-header">
-                  <Link
-                    to={`/profile/${username}`}
-                    style={{ fontWeight: 700 }}
-                    className="text-light"
-                  >
-                    {product.username}
-                  </Link>{' '}
-                  product on {product.createdAt}
-                </p>
-                <div className="card-body">
-                  <Link to={`/product/${product._id}`}>
-                    <p>{product.productText}</p>
-                    <p className="mb-0">
-                      Reactions: {product.reactionCount} || Click to{' '}
-                      {product.reactionCount ? 'see' : 'start'} the discussion!
-                    </p>
-                  </Link>
+              <div className="card  px-1 py-1 user-posts-card ">
+            
+              <h4 className="products-username">{product.username}</h4>
+              <Link to={`/profile/${product.username}`}></Link>
+                <Link to={`/products/${product._id}`} >
+                  <img className="product-img"
+                    alt={product.name}
+                    src={product.image}
+                  />
+                  <div className="product-stats">
+                  <h4>{product.name}</h4>
+                  <span className="product-price">$ {product.price} / day</span>
+                  </div>
+                </Link>
+                <div className="" >
+                  <div>Available </div>
                 </div>
+
               </div>
             ))}
         </div>

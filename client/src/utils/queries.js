@@ -98,9 +98,12 @@ export const QUERY_USER = gql`
     _id
     username
     products {
+      username
       name
+      _id
       image
       description
+      price
       category {
         name
       }

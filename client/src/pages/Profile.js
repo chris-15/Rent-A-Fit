@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import ProductList from '../components/ProductList'
 import  { QUERY_ME, QUERY_USER} from '../utils/queries'
 import { useQuery } from '@apollo/client'
+import UserProductList from '../components/UserProductList'
 
 
 const Profile = () => {
@@ -41,9 +42,9 @@ console.log(user)
     <h2>Viewing { username ? `${user.username}'s` : 'Your'} </h2>
     </div>
 
-    <div className='flex-row justify-space-between mb-3'>
+    <div className='flex-row justify-center mb-3'>
     {/* Print PRODUCT List */}
-    <ProductList 
+    <UserProductList
     username={user.username}
     products={user.products}
     />

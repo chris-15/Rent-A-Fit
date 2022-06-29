@@ -1,0 +1,14 @@
+.user-posts-card{
+    width: 100%;
+}
+.user-posts-card-container{
+    width: 35%;
+
+}
+.product-img{
+    height: 400px;
+}
+.products-username{
+    text-align: left;
+    font-size: 1.3rem;
+}

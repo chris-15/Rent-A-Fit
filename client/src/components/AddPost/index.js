@@ -126,7 +126,7 @@ const AddPost = (props) => {
           </label>
 
           {/* image comes from the usestate variable image, setImage*/}
-          <img alt="image" src={image} />
+           { image && <img alt="image" src={image} /> } 
 
           <h3>Description</h3>
           <textarea

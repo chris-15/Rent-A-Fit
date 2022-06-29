@@ -42,6 +42,8 @@ const productSchema = new Schema({
   }
 });
 
+
+
 productSchema.virtual('reviewCount').get(function(){
   return this.review.length;
 })

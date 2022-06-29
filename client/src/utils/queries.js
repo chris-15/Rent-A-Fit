@@ -40,6 +40,18 @@ query Products {
   }
 }
 `
+
+export const FIND_PRODUCT = gql `
+query FindProduct($input: ProductInputFilter) {
+  findProduct(input: $input) {
+    _id
+    name
+    image
+    description
+    username
+  }
+}
+`
 export const QUERY_ALL_PRODUCTS = gql`
   {
     products {

@@ -46,6 +46,13 @@ const resolvers = {
       product: async (parent, { _id }) => {
         return await Product.findOne({_id}).populate('category');
       },
+      findProduct: async (parent, args) => {
+
+        
+        console.log(args.input.description || args.input.name )
+                                                   
+        return await Product.find({$text: {$search: args.input.description || args.input.name }})
+      },
       user: async (parent, { username }) => {
         return User.findOne({ username })
           .select('-__v -password')
@@ -53,6 +60,7 @@ const resolvers = {
           .populate('orders')
           // .populate('categories');
       },
+
       order: async (parent, { _id }, context) => {
         if (context.user) {
           const user = await User.findById(context.user._id).populate({

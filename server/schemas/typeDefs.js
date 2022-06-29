@@ -27,7 +27,7 @@ const typeDefs = gql`
   type User {
     _id: ID
    username: String
-    product: [Product]
+    products: [Product]
     email: String
     orders: [Order]
   }

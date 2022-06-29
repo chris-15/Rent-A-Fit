@@ -14,7 +14,7 @@ const Profile = () => {
     })
 
     const user = data?.user || data?.me || []
-console.log(Auth.getProfile())
+console.log(user)
       //navigate to personal profile page if the username is the logged-in user's
     if(Auth.loggedIn() && Auth.getProfile().data.username === username){
         // return <Navigate to='/profile' />
@@ -41,10 +41,11 @@ console.log(Auth.getProfile())
     <h2>Viewing { username ? `${user.username}'s` : 'Your'} </h2>
     </div>
 
-    <div className=' col-12 col-lg-8 flex-row justify-space-between mb-3'>
+    <div className='flex-row justify-space-between mb-3'>
     {/* Print PRODUCT List */}
     <ProductList 
     username={user.username}
+    products={user.products}
     />
     </div>
 

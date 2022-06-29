@@ -28,6 +28,7 @@ function Signup(props) {
     console.log(formState)
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    
   };
 
 function handleTextChange(name, value) {

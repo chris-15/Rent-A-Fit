@@ -25,8 +25,7 @@ function Login(props) {
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
-      alert(Auth.getProfile().data.username)
-  window.location.assign('/profile/' + Auth.getProfile().data.username)
+     return    <Navigate to='/'></Navigate>
     } catch (e) {
       console.log(e);
     }

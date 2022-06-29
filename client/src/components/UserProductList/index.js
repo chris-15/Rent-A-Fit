@@ -18,7 +18,7 @@ console.log(products._id)
               <div className="card  px-1 py-1 user-posts-card ">
             
 
-              <Link to={`/profile/${product.username}`}>               <h4 className="products-username">{product.username}</h4></Link>
+              <Link to={`/profile/${product.username}`}><h4 className="products-username">{product.username}</h4></Link>
                 <Link to={`/products/${product._id}`} >
                   <img className="product-img"
                     alt={product.name}

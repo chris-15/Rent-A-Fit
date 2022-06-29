@@ -96,17 +96,18 @@ function Detail() {
   if(loading){
     return <h1>Loading</h1>
   }
+  console.log(currentProduct._id)
   return (
     <>
       {currentProduct !== {} ? (
         <div className="details-body-container">
       
         <div className="details-body">
-          <Link to="/" className="back-to-products">← Back to Products</Link>
+          <Link to="/" className="back-to-products"> ← Back to Products</Link>
 
           <div className="details-name-username-container">
           <h2>{currentProduct.name}</h2>
-          <h2>{currentProduct.username}</h2>
+          <Link to={`/profile/${currentProduct.username}`}><h2 id="details-username" className="products-username">{currentProduct.username}</h2></Link>
           </div>
           
           <div className="details-body-img-parent">

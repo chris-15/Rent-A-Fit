@@ -252,7 +252,9 @@
     transform: translate(0, 12px) scale(0.75);
   }
 
-
+#details-username{
+  font-size: 1.0rem;
+}
 .details-body-container{
   margin-top: 10%;
   display: flex;
@@ -303,8 +305,10 @@
     margin-bottom: 5%;
   }
   .details-name-username-container{
+    margin-top: 3%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .details-price{
     font-weight: 600;

@@ -12,14 +12,16 @@ const SearchBar = () => {
   const [input, setInput] = useState("")
 
   const { loading, data} = useQuery(FIND_PRODUCT, { 
-    variables: { input: input}
+    variables: {  input: { name: input}}
   })
 
-  const foundProducts = data?.products || [];
+  
+  const foundProducts = data?.findProduct || [];
+  console.log(foundProducts)
 
   const handleFormSubmit = async (event) => {
     event.preventDefault()
-    console.log(foundProducts)
+  
 
     // try{
     //   const { data } = await FindProduct({
@@ -52,7 +54,6 @@ const SearchBar = () => {
    {input && (
     <motion.button type='submit' whileHover={{ scale: 1.2}} className='searchButton'><FaSearch /></motion.button>
    )}
-  
     </form>
      
     </div>

@@ -463,6 +463,9 @@ background-color: rgb(128, 79, 234, 0.1);
       flex-direction: column;
       width: 95%;
   }
+  .reviewphoto-container{
+    margin-top: 7%;
+  }
     .signup-container{
       display: flex;
       flex-direction: column-reverse;

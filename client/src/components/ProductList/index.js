@@ -9,7 +9,7 @@ import './style.css'
 
 import { idbPromise } from "../../utils/helpers";
 
-function ProductList(props) {
+function ProductList() {
 
   const [state, dispatch] = useStoreContext();
 

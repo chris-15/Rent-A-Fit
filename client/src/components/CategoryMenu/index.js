@@ -15,8 +15,10 @@ function CategoryMenu() {
     const { categories } = state;
   
     const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
-  
+
+   
     useEffect(() => {
+      
       if (categoryData) {
         dispatch({
           type: UPDATE_CATEGORIES,
@@ -36,6 +38,7 @@ function CategoryMenu() {
     }, [categoryData, loading, dispatch]);
   
     const handleClick = (id) => {
+      console.log(id)
       dispatch({
         type: UPDATE_CURRENT_CATEGORY,
         currentCategory: id,

@@ -64,10 +64,11 @@ const SearchBar = () => {
     <div className="filtered-posts-card-container flex " >
     {filteredProduct &&
       filteredProduct.map(product => (
-        <div className="card flex px-1 py-1 filtered-posts-card ">
+        <motion.div  whileHover={{ scale:1.05}} className="flex px-1 py-1 filtered-posts-card ">
         <Link to={`/profile/${product.username}`}><h4 className="products-username">{product.username}</h4></Link>
           <Link to={`/products/${product._id}`} >
             <img className="product-img"
+            id="searched-product-img"
               alt={product.name}
               src={product.image}
             />
@@ -81,7 +82,7 @@ const SearchBar = () => {
           </div>
 
          {Auth.loggedIn() ?  <motion.button whileHover={{ scale:1.1}} className='add-to-cart add-to-cart-gradient' >Add to cart</motion.button> : '' }
-        </div>
+        </motion.div>
         ))}
         </div>
     </>

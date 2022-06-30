@@ -75,7 +75,7 @@ color: rgb(78, 78, 78);
     }
     .filtered-posts-card{
         height: 10px;
-        height: 400px;
+        height: 250px;
     }
    #searched-product-img{
     height: 350px;
@@ -84,8 +84,8 @@ color: rgb(78, 78, 78);
 
 @media screen and (min-width: 1300px){
     .filtered-posts-card{
-        width: 100%;
-        height: 450px;
+        /* width: 100%; */
+        height: 300px;
     }
     #filtered-product-image{
         height: 400px;

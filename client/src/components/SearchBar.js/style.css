@@ -29,7 +29,7 @@
 .searchInput{
     all: unset;
     border: 1px solid lightgray;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 1px 4px;
     background-color: white;
     border-radius: 20px;
     color: rgb(78, 78, 78);
@@ -38,33 +38,69 @@
     padding: 6px 10px;
   }
   
+ 
 .searchButton, .search-x{
 background-color: transparent;
 font-size: x-large;
 color: rgb(78, 78, 78);
 }
+.filtered-posts-card{
+    height: 300px;
+    margin-bottom: 20%;
+    margin-right: 2%;
+    margin-top: 8%;
+    text-align: center;
+    min-width: 300px;
 
+}
+.filtered-posts-card:first-child{
+    margin-left: 2%;
+}
 .filtered-posts-card-container{
     display: flex;
     flex-direction: row;
     background-color: rgba(251, 251, 251, 0.955);
     width: 100%;
+    /* height: 650px; */
     overflow-x: scroll;
     overflow-y: hidden;
     white-space:nowrap;
-    margin-bottom: 3%;
+    margin-bottom: 10%;
     margin: auto;
+}
+
+@media screen and (min-width: 1600px){
+    .searchInput{
+        width: 70%;
+    }
+    .filtered-posts-card{
+        height: 10px;
+        width: 25%;
+    }
+   #searched-product-img{
+    height: 350px;
+   }
 }
 
 @media screen and (max-width: 950px){
     .filtered-posts-card{
         width: 100%;
     }
+    #filtered-product-image{
+        height: 400px;
+
+    }
     
 }
 
 @media screen and (max-width: 768px) {
-
+    .filtered-posts-card{
+        width: 100%;
+        height: 450px;
+    }
+    .filtered-posts-card{
+        margin-bottom: 20%;
+    }
     .searchForm{
         width: 90%;
     }

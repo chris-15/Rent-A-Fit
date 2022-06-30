@@ -145,8 +145,12 @@ function Nav() {
             </Link>
           </div>
 
-          <div className="mx-1 icon">
-            <Link to="/login">
+          <div className="mx-1 icons">
+            <Link to="/login"
+            onClick={handleClick}
+            name="login"
+            className={active.login ? "active" : "not-active"}
+            >
               <div>
                 <FaUser />
                 <p>Login</p>

@@ -31,8 +31,15 @@ height: 100px;
     }
 }
 @media screen and (max-width: 768px){
+    .categoryMenu{
+        width: 100%;
+    }
     .categoryMenu_items{
         margin-top: 3%;
+        overflow-x: scroll;
+    overflow-y: hidden;
+    white-space:nowrap;
+    padding-bottom: 10px;
     }
     .categoryButtons{
         margin-top: 7%;

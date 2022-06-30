@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import LOGINPHOTO from '../assets/login-photo.svg'
-import { FaChevronLeft } from 'react-icons/fa'
+
 
 function Signup(props) {
   const [isActive, setIsActive] = useState({
@@ -14,10 +14,12 @@ function Signup(props) {
   })
   const [formState, setFormState] = useState({ email: '', password: '' });
   
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
+
     event.preventDefault();
+  
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -107,6 +109,12 @@ function handleTextChange(name, value) {
           <label htmlFor='password' className={ isActive.password ? 'Active' : ''}>
           password</label>
         </div>
+        {error ? (
+          <div>
+          <p className='error-text'>Something went wrong.</p>
+          </div>
+        ): null
+        }
         <div className="flex-row my-2 inputs">
           <button type="submit" className='submit-button'>submit</button>
         </div>

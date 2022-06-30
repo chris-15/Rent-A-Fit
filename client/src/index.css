@@ -39,9 +39,11 @@
     padding: 5px 5px ;
   }
   .nav-items:hover{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    transition: .3s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: .3s;
+    transition-timing-function: ease-in-out;
   }
+
   /* header styling  ends*/
   
   
@@ -155,6 +157,7 @@
   }
   .signup-form{
     margin-top: 5%;
+    margin-left: 3%;
   }
   .not-a-user, .already-a-user{
    
@@ -476,9 +479,11 @@ background-color: rgb(128, 79, 234, 0.1);
     .signup-container{
       display: flex;
       flex-direction: column-reverse;
+    
     }
     .signup-form, .login-right, input{
       width: 100%;
+      margin: auto;
    
     }
     .signup-form > h2 {

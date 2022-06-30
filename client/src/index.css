@@ -155,6 +155,7 @@
   }
   .signup-form{
     margin-top: 5%;
+    margin-left: 3%;
   }
   .not-a-user, .already-a-user{
    
@@ -476,9 +477,11 @@ background-color: rgb(128, 79, 234, 0.1);
     .signup-container{
       display: flex;
       flex-direction: column-reverse;
+    
     }
     .signup-form, .login-right, input{
       width: 100%;
+      margin: auto;
    
     }
     .signup-form > h2 {

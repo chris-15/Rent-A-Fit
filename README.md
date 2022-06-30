@@ -11,6 +11,10 @@
   ## Description
   This project was the final group project in which we were tasked to crate a MERN stack single page application that works with real world data to solve a real world problem. Requirements for this project include: Performant JavaScript, NoSQL databases, React single page applications, GraphQL APIs, concurrent servers in a MERN app, and authenitaction. For our project we choose to create a clothing rental site where users can either post items that they would like other people to rent or search for items that they would like to rent themsevles.
 
+  Below is a preview of the deployed application:
+
+ <img src = "client/src/assets/rent-a-fit.png" width="600" height="400">
+
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)

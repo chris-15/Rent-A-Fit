@@ -56,7 +56,7 @@ const AddPost = (props) => {
           image: image,
         },
       })
-      navigate('/')
+      window.location.assign('/');
     }catch(e){
       console.error(e)
   }

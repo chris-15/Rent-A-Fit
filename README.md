@@ -13,12 +13,17 @@
 
   ## Table of Contents
   * [Installation](#installation)
+  * [Usage](#usage)
   * [Contributions](#contributions)
   * [License](#license)
   * [Questions](#questions)
 
   ## Installation
-  To install you can clone this repository and run command "npm i" in the command line to install all dependencies. You can also simply navigate to the link of the deploey application (link below).
+  To install you can clone this repository and run command "npm i" in the command line to install all dependencies. You can also simply navigate to the link of the deployed application (link below).
+
+  ## Usage
+  You can find the deployed applicaion [here](https://afternoon-forest-49656.herokuapp.com/).
+
 
   
 

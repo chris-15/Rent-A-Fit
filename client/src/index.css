@@ -450,7 +450,14 @@ background-color: rgb(128, 79, 234, 0.1);
   .reviewphoto-container p{
     font-size: 1.3rem;
   }
+
   @media screen and (max-width: 768px) {
+    .nav-items{
+      display: none;
+    }
+    .header{
+      justify-content: center;
+    }
     .details-body-container{
       width: 100%;
       
